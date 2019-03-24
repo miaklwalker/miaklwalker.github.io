@@ -1,0 +1,53 @@
+Button {
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    line-height: 22px;
+    padding: 14px;
+    border-radius: 50px;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-color:rgb(39,170,159);
+    display: inline-block;
+    align-items: center
+}
+
+Button:hover {
+    background: #27AA9F;
+}
+
+Button:active {
+    background: #27AA9F;
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+}
+ul{
+    text-align: right
+}
+header{
+    text-align: center;
+}
+span{
+    text-align: left;  
+}
+p{
+    text-align: center;
+}
+
+q {
+    text-align: center;
+}
+
+h1 {
+    text-align: center
+}
+
+h3 {
+    text-align: center;
+}
