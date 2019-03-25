@@ -51,3 +51,12 @@ h1 {
 h3 {
     text-align: center;
 }
+
+body {
+    background-image: url(Images/Profile%20Image.jpg);
+    background-size:cover;
+}
+
+#backPlate {
+    background-color: aliceblue;
+}
