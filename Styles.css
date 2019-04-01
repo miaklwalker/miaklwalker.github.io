@@ -1,86 +1,79 @@
-Button {
-    color: rgb(255, 255, 255);
-    font-size: 22px;
-    line-height: 22px;
-    padding: 14px;
-    border-radius: 50px;
-    font-family: Georgia, serif;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-    background-color:rgb(39,170,159);
-    display: inline-block;
-    align-items: center
+.container {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: " .title  slogan  nav."
+        " . header header header."
+        " . intro intro intro ."
+        " . about about about ."
+        " . referral referral referral ."
+        " . footer footer footer .";
 }
 
-Button:hover {
-    background: #27AA9F;
+.nav {
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    background: yellow;
+    grid-area: nav;
 }
-
-Button:active {
-    background: #27AA9F;
+.slogan{
+    grid-area: slogan;
 }
-
-li{
-    text-decoration: none;
+.nav ul{
     list-style: none;
 }
-ul{
-    text-align: right
-}
-header{
-    text-align: center;
-}
-span{
-    text-align: left;  
-}
-p{
-    text-align: center;
+
+.title {
+    padding-top: 8%;
+    padding-right: 10%;
+    background: red;
+    grid-area: title;
 }
 
-q {
-    text-align: center;
+.header {
+    background: lightGreen;
+    grid-area: header;
 }
 
-h1 {
-    text-align: center
+.intro {
+    background: orange;
+    grid-area: intro;
 }
 
-h3 {
-    text-align: center;
+.about {
+    background: lightBlue;
+    grid-area: about;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:"dad  dad h2 "
+                        "dad  dad q ";
 }
-.container{
-    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
-    grid-template-areas:". Title  . navBar ."
-                   ". Header Header Header ."
-                         ". main main main ."
-                          ". . about about ."
-                          ". . refer refer .";
+.aboutH2{
+    grid-area: h2;
 }
-.item1{
-    background:yellow;
-    grid-area:navBar;
+.quote{
+    grid-area: q;
 }
-.item2{
-    background:blue;
-    grid-area:Title;
+#dad{
+    grid-area: dad;
+    transform: rotate(0.25turn);
+    max-width: 100%;
+    transform: scale(auto);
+    
 }
-.item3{
-    background:green;
-    grid-area:Header;
+
+.referral {
+    background: purple;
+    grid-area: referral;
 }
-.item4{
-    background:red;
-    grid-area:main;
+
+.footer {
+    background: grey;
+    grid-area: footer;
 }
-.item5{
-    background:purple;
-    grid-area:about;
-}
-.item6{
-    background:orange;
-    grid-area:refer;
-}
+
+
+
+
+
