@@ -51,12 +51,36 @@ h1 {
 h3 {
     text-align: center;
 }
-
-body {
-    background-image: url(Images/Profile%20Image.jpg);
-    background-size:cover;
+.container{
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-areas:". Title  . navBar ."
+                   ". Header Header Header ."
+                         ". main main main ."
+                          ". . about about ."
+                          ". . refer refer .";
 }
-
-#backPlate {
-    background-color: aliceblue;
+.item1{
+    background:yellow;
+    grid-area:navBar;
+}
+.item2{
+    background:blue;
+    grid-area:Title;
+}
+.item3{
+    background:green;
+    grid-area:Header;
+}
+.item4{
+    background:red;
+    grid-area:main;
+}
+.item5{
+    background:purple;
+    grid-area:about;
+}
+.item6{
+    background:orange;
+    grid-area:refer;
 }
