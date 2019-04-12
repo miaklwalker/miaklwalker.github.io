@@ -1,0 +1,100 @@
+.grid-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 0.3fr 1.4fr 1.3fr 1.3fr 1.4fr 0.3fr;
+    grid-template-rows: 1.3fr 0.4fr 2fr 0.4fr 1.6fr 0.4fr 0.2fr;
+    grid-template-areas: 
+    ". Banner Banner Banner Banner ."
+    ". Intro Intro Intro Intro ." 
+    ". AboutMe AboutMe AboutMe AboutMe ." 
+    ". Referrals Referrals Referrals Referrals ."
+    ". RefBody RefBody RefBody RefBody ." 
+    ". Footer Footer Footer Footer ."
+    ". . . . . .";
+  }
+  a{
+    font-size: 130%;
+    color:royalblue;
+    text-decoration: none;
+  }
+  .Banner {
+    color:royalblue;
+    background-image: url("./Images/General\ Facebook\ Header.jpg");
+    background-size:90% 120%;
+    background-position: 19px -19px;
+    display: grid;
+    grid-template-columns: 1fr 0.6fr 1.4fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "Title . NavCont" ". . .";
+    grid-area: Banner;
+  }
+  
+  .Title { 
+    text-align: left;
+    padding-left: 5px;
+    grid-area: Title; 
+  }
+  
+  .NavCont {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". . . .";
+    grid-area: NavCont;
+  }
+  
+  .Intro { 
+      grid-area: Intro; 
+    }
+  
+  .AboutMe {
+    display: grid;
+    grid-template-columns: 0.6fr 0.6fr 1.8fr;
+    grid-template-rows: 1.7fr .3fr;
+    grid-template-areas: 
+    "Dad Dad quote" 
+    "Dad Dad content";
+    grid-area: AboutMe;
+  }
+  
+  .Dad { 
+      object-fit: contain;
+      max-width: 100%;
+      grid-area: Dad;
+     }
+  
+  .quote { grid-area: quote; }
+  
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "aboutText aboutText aboutText" ". button .";
+    grid-area: content;
+  }
+  
+  .aboutText { grid-area: aboutText; }
+  
+  .button { grid-area: button; }
+  
+  .Referrals { grid-area: Referrals; }
+  
+  .RefBody {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "Text Coupon" "Punchline Coupon";
+    grid-area: RefBody;
+  }
+  
+  .Text { grid-area: Text; }
+  
+  .Punchline { grid-area: Punchline; }
+  
+  .Coupon {
+    object-fit: contain;
+    max-width: 100%;
+     grid-area: Coupon; 
+    }
+  
+  .Footer { grid-area: Footer; }
