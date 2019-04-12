@@ -2,7 +2,7 @@
     text-align: center;
     display: grid;
     grid-template-columns: 0.3fr 1.4fr 1.3fr 1.3fr 1.4fr 0.3fr;
-    grid-template-rows: 1.3fr 0.4fr 2fr 0.4fr 1.6fr 0.4fr 0.2fr;
+    grid-template-rows: 1fr 0.4fr 1.4fr 0.4fr 1fr 0.4fr 0.2fr;
     grid-template-areas: 
     ". Banner Banner Banner Banner ."
     ". Intro Intro Intro Intro ." 
@@ -77,7 +77,11 @@
   
   .button { grid-area: button; }
   
-  .Referrals { grid-area: Referrals; }
+  .Referrals { 
+    font-style: bold;
+    font-size:120%;
+    grid-area: Referrals;
+   }
   
   .RefBody {
     display: grid;
