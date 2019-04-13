@@ -4,7 +4,7 @@ let selectedStyle = styleSelect.selectedIndex;
 let selectionWatcher = document.querySelector('.styleSelector') as HTMLSelectElement;
 selectionWatcher.addEventListener('change',(event:any) =>{
    selectedStyle = event.target.selectedIndex
-   styler(stylesJson);
+   styler(styles);
 })
 /**
  * @function styler

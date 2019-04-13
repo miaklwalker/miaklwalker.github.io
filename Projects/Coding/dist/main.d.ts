@@ -340,7 +340,6 @@ declare let textStyle: string[];
 declare let ballStyle: string[];
 declare let fontStyle: string[];
 declare let backgroundStyle: [string, boolean];
-declare function GetJson(): Promise<BrickBreaker>;
 declare const keyBoard: keyBoard;
 /**
  * @name game
@@ -349,4 +348,5 @@ declare const keyBoard: keyBoard;
 declare const game: game;
 declare function setup(): void;
 declare function draw(): void;
+declare const styles: any;
 //# sourceMappingURL=main.d.ts.map

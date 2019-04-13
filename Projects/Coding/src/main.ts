@@ -26,20 +26,6 @@ let textStyle: string[];
 let ballStyle: string[];
 let fontStyle: string[];
 let backgroundStyle: [string,boolean];
-
-async function GetJson(){
-    let response = await fetch("../lib/JSON/BrickBreaker.json")
-    let styleSheet = await response.json();
-    return styleSheet as Promise<BrickBreaker>
-}
-GetJson()
-.then(Json => stylesJson = Json )
-.then(()=> styler(stylesJson))
-.then(()=> setup());
-
-
-
-
 const keyBoard: keyBoard = {
     ArrowLeft: false,
     ArrowRight: false,
@@ -92,10 +78,12 @@ const game: game = {
         canvas.addEventListener("click", clicked, {
             once: true
         });
+        setup();
     };
  })();
 
 function setup() {
+    styler(styles);
     ai = new Ai();
     ball = new Ball(canvas.width / 2, canvas.height / 2);
     player = new Paddle(canvas.width / 2, canvas.height - canvas.height * .2);
