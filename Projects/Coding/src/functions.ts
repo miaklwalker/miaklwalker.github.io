@@ -17,6 +17,7 @@ function makeCanvas(name: string, width ? : string, height ? : string) {
     canvas.setAttribute("width", w);
     canvas.setAttribute("height", h);
     return canvas;
+    
 }
 
 // Registers an Event if user click the canvas
@@ -53,6 +54,7 @@ function gameLoop(name: FrameRequestCallback) {
  * @description - Draws The Background of the level using the Theme selected By the Player
  */
 function drawBackground() {
+    styler(styleSheet);
     if (backgroundStyle[1] === false) {
         ctx.fillStyle = backgroundStyle[0];
         ctx.clearRect(0, 0, canvas.width, canvas.height);

@@ -332,15 +332,14 @@ declare let paddleStyle: string[];
 declare let textStyle: string[];
 declare let ballStyle: string[];
 declare let fontStyle: string[];
+declare let styleSheet: any;
 declare let backgroundStyle: [string, boolean];
 declare let cracks: animatedSprites;
-declare function GetJson(): Promise<BrickBreaker>;
 declare const keyBoard: keyBoard;
 /**
  * @name game
  * @description - Game contains the information regarding the player as opposed to the level itself!
  */
 declare const game: game;
-declare function start(): void;
 declare function setup(): void;
 declare function draw(): void;

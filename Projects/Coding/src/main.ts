@@ -25,22 +25,23 @@ let paddleStyle: string[];
 let textStyle: string[];
 let ballStyle: string[];
 let fontStyle: string[];
+let styleSheet:any;
 let backgroundStyle: [string,boolean];
 let cracks = new animatedSprites(5);
 cracks.addSprites("../docs/cracks/crack0",".png");
-async function GetJson(){
-    let response = await fetch("https://api.myjson.com/bins/bpwk4");
-    let styleSheet = await response.json();
-    return styleSheet as Promise<BrickBreaker>
-}
-GetJson()
-.then(Json => stylesJson = Json )
-.then(()=>{
-     styler(stylesJson)
-     console.log("It's Loaded")
-     start();
-     console.log("Start!")
-})
+
+// async function GetJson(){
+//     let response = await fetch("https://api.myjson.com/bins/bpwk4");
+//     let styleSheet = await response.json();
+//     return styleSheet as Promise<BrickBreaker>
+// }
+// GetJson()
+// .then(Json => stylesJson = Json )
+// .then(()=>{
+//      styler(stylesJson)
+//      console.log("It's Loaded")
+//      console.log("Start!")
+// })
 
 
 
@@ -65,8 +66,9 @@ const game: game = {
 
 
 // Anonymous IIFE to load Everything!
- function start(){
+ (()=>{
     makeCanvas("canvas");
+    
     window.onload = function () {
 
         document.addEventListener("keydown", (event) => {
@@ -100,7 +102,7 @@ const game: game = {
         });
     setup()
     };
- };
+ })();
 
 function setup() {
     ai = new Ai();
