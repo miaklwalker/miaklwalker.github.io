@@ -783,7 +783,8 @@ let backgroundStyle;
 let cracks = new animatedSprites(5);
 cracks.addSprites("../docs/cracks/crack0", ".png");
 async function GetJson() {
-    let response = await fetch("./JSON/BrickBreaker.json");
+    //let response = await fetch("./JSON/BrickBreaker.json")
+    let response = await fetch("https://api.myjson.com/bins/bpwk4");
     let styleSheet = await response.json();
     return styleSheet;
 }
@@ -791,7 +792,9 @@ GetJson()
     .then(Json => stylesJson = Json)
     .then(() => {
     styler(stylesJson);
+    console.log("It's Loaded");
     start();
+    console.log("Start!");
 });
 const keyBoard = {
     ArrowLeft: false,
