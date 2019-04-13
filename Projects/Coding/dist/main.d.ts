@@ -343,4 +343,3 @@ declare const keyBoard: keyBoard;
 declare const game: game;
 declare function setup(): void;
 declare function draw(): void;
-//# sourceMappingURL=main.d.ts.map

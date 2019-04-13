@@ -1,22 +1,22 @@
 {
   "bundle": {
-    "commonSourceDirectory": "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/",
+    "commonSourceDirectory": "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/",
     "sourceFiles": [
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/AI.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/Ball.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/Brick.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/Collisions.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/GameLogic.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/Interfaces.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/Level.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/Paddle.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/PowerUps.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/ScoreBoard.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/Styler.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/Vector.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/animatedBackground.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/functions.ts",
-      "C:/Users/ouisi/iCloudDrive/Documents/MasterCodeFolder/GitHub/BrickBreaker/src/main.ts"
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/AI.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/Ball.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/Brick.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/Collisions.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/GameLogic.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/Interfaces.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/Level.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/Paddle.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/PowerUps.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/ScoreBoard.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/Styler.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/Vector.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/animatedBackground.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/functions.ts",
+      "/Users/michaelwalker/Documents/MasterCodeFolder/GitHub/miaklwalker.github.io/Projects/Coding/src/main.ts"
     ],
     "js": {
       "sections": [
@@ -27,8 +27,8 @@
           "data": "use strict"
         },
         {
-          "pos": 15,
-          "end": 29255,
+          "pos": 14,
+          "end": 28459,
           "kind": "text"
         }
       ],
@@ -56,11 +56,11 @@
       "sections": [
         {
           "pos": 0,
-          "end": 10225,
+          "end": 9880,
           "kind": "text"
         }
       ]
     }
   },
-  "version": "3.4.1"
+  "version": "3.4.3"
 }

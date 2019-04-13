@@ -783,6 +783,7 @@ let backgroundStyle;
 let cracks = new animatedSprites(5);
 cracks.addSprites("../docs/cracks/crack0", ".png");
 async function GetJson() {
+    //let response = await fetch("../lib/JSON/BrickBreaker.json")
     let response = await fetch("https://api.myjson.com/bins/bpwk4");
     let styleSheet = await response.json();
     return styleSheet;
@@ -864,4 +865,3 @@ function draw() {
     player.show();
     gameLoop(draw);
 }
-//# sourceMappingURL=main.js.map
