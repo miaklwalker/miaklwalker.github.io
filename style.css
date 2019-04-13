@@ -10,11 +10,17 @@
     ". Referrals Referrals Referrals Referrals ."
     ". RefBody RefBody RefBody RefBody ." 
     ". Footer Footer Footer Footer ."
-    ". . . . . .";
+    ".   .      .      .      .    .";
   }
-  a{
+  .link{
+    margin:auto;
+    padding:5px;
+    border:black;
+    border-style: solid;
+    border-width: 3px;
+    border-radius:100%;
     font-size: 130%;
-    color:royalblue;
+    color:crimson;
     text-decoration: none;
   }
   .Banner {
@@ -24,20 +30,24 @@
     background-position: 19px -19px;
     display: grid;
     grid-template-columns: 1fr 0.6fr 1.4fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0.3fr 1.7fr;
     grid-template-areas: "Title . NavCont" ". . .";
     grid-area: Banner;
   }
   
   .Title { 
+    color:black;
+    border:none;
+    font-size: 150%;
     text-align: left;
     padding-left: 5px;
     grid-area: Title; 
+
   }
   
   .NavCont {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.9fr 1fr 1fr 1.1fr;
     grid-template-rows: 1fr;
     grid-template-areas: ". . . .";
     grid-area: NavCont;
@@ -101,4 +111,10 @@
      grid-area: Coupon; 
     }
   
-  .Footer { grid-area: Footer; }
+  .Footer { 
+    grid-area: Footer; 
+  }
+
+  q{
+    font-size:150%;
+  }
