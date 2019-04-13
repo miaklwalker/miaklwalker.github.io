@@ -277,6 +277,15 @@ declare class animatedBackground {
     addSprites(url: string, format: string): void;
     Sprite(): HTMLImageElement;
 }
+declare class Collectible {
+    position: Vector;
+    velocity: Vector;
+    effect: string;
+    height: number;
+    constructor();
+    show(brick: Brick): void;
+    fall(paddle: Paddle): void;
+}
 declare let frame: number;
 declare let counter: number;
 /**

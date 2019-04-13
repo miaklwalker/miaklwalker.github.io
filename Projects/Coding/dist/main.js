@@ -670,6 +670,27 @@ class animatedBackground {
         return this.sprites[this.frame % this.numberOfSprites];
     }
 }
+class Collectible {
+    constructor() {
+        this.position = new Vector();
+        this.velocity = new Vector(0, 3);
+        this.effect = "";
+        this.height = 0;
+    }
+    show(brick) {
+        this.position.x = brick.position.x + (brick.position.x - brick.width / 4);
+        this.position.y = brick.position.y;
+        ctx.fillRect(this.position.x, this.position.y, brick.width / 4, brick.height * .75);
+    }
+    fall(paddle) {
+        this.position.add(this.velocity);
+        if (this.position.x > paddle.position.x && this.position.x < paddle.position.x + paddle.width) {
+            if (this.position.y + this.height >= paddle.position.y) {
+                //get power;
+            }
+        }
+    }
+}
 let frame = 0;
 let counter = 0;
 // Functions
@@ -769,7 +790,8 @@ async function GetJson() {
 }
 GetJson()
     .then(Json => stylesJson = Json)
-    .then(() => styler(stylesJson));
+    .then(() => styler(stylesJson))
+    .then(() => setup());
 const keyBoard = {
     ArrowLeft: false,
     ArrowRight: false,
@@ -820,7 +842,6 @@ const game = {
         canvas.addEventListener("click", clicked, {
             once: true
         });
-        setup();
     };
 })();
 function setup() {
