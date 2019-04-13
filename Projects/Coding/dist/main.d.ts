@@ -341,5 +341,6 @@ declare const keyBoard: keyBoard;
  * @description - Game contains the information regarding the player as opposed to the level itself!
  */
 declare const game: game;
+declare function start(): void;
 declare function setup(): void;
 declare function draw(): void;

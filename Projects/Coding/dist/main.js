@@ -783,14 +783,15 @@ let backgroundStyle;
 let cracks = new animatedSprites(5);
 cracks.addSprites("../docs/cracks/crack0", ".png");
 async function GetJson() {
-    let response = await fetch("../lib/JSON/BrickBreaker.json");
-    //let response = await fetch("https://api.myjson.com/bins/bpwk4");
+    // let response = await fetch("../lib/JSON/BrickBreaker.json")
+    let response = await fetch("https://api.myjson.com/bins/bpwk4");
     let styleSheet = await response.json();
     return styleSheet;
 }
 GetJson()
     .then(Json => stylesJson = Json)
-    .then(() => styler(stylesJson));
+    .then(() => styler(stylesJson))
+    .then(() => start());
 const keyBoard = {
     ArrowLeft: false,
     ArrowRight: false,
@@ -807,7 +808,7 @@ const game = {
     over: false,
 };
 // Anonymous IIFE to load Everything!
-(() => {
+function start() {
     makeCanvas("canvas");
     window.onload = function () {
         document.addEventListener("keydown", (event) => {
@@ -843,7 +844,8 @@ const game = {
         });
         setup();
     };
-})();
+}
+;
 function setup() {
     ai = new Ai();
     ball = new Ball(canvas.width / 2, canvas.height / 2);

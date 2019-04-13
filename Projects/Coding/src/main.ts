@@ -29,14 +29,15 @@ let backgroundStyle: [string,boolean];
 let cracks = new animatedSprites(5);
 cracks.addSprites("../docs/cracks/crack0",".png");
 async function GetJson(){
-    let response = await fetch("../lib/JSON/BrickBreaker.json")
-    //let response = await fetch("https://api.myjson.com/bins/bpwk4");
+   // let response = await fetch("../lib/JSON/BrickBreaker.json")
+    let response = await fetch("https://api.myjson.com/bins/bpwk4");
     let styleSheet = await response.json();
     return styleSheet as Promise<BrickBreaker>
 }
 GetJson()
 .then(Json => stylesJson = Json )
 .then(()=> styler(stylesJson))
+.then(()=> start());
 
 
 
@@ -60,7 +61,7 @@ const game: game = {
 
 
 // Anonymous IIFE to load Everything!
- (()=>{
+ function start(){
     makeCanvas("canvas");
     window.onload = function () {
 
@@ -93,9 +94,9 @@ const game: game = {
         canvas.addEventListener("click", clicked, {
             once: true
         });
-     setup()
+    setup()
     };
- })();
+ };
 
 function setup() {
     ai = new Ai();
