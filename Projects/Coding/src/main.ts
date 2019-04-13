@@ -29,7 +29,7 @@ let backgroundStyle: [string,boolean];
 let cracks = new animatedSprites(5);
 cracks.addSprites("../docs/cracks/crack0",".png");
 async function GetJson(){
-   let response = await fetch("/JSON/BrickBreaker.json")
+   let response = await fetch("./JSON/BrickBreaker.json")
     let styleSheet = await response.json();
     return styleSheet as Promise<BrickBreaker>
 }
