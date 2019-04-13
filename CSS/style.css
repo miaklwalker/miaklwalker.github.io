@@ -1,10 +1,22 @@
-.grid-container {
+@font-face {
+  font-family: 'afananregular';
+  src: url('../Fonts/afanan.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+*{
+  font-family:'Open Sans';
+}
+h1{
+font-family: 'afananregular';
+}
+.grid-container { 
     text-align: center;
     display: grid;
     grid-template-columns: 0.3fr 1.4fr 1.3fr 1.3fr 1.4fr 0.3fr;
     grid-template-rows: 1fr 0.4fr 1.4fr 0.4fr 1fr 0.4fr 0.2fr;
     grid-template-areas: 
-    ". Banner Banner Banner Banner ."
+    "Banner Banner Banner Banner Banner Banner"
     ". Intro Intro Intro Intro ." 
     ". AboutMe AboutMe AboutMe AboutMe ." 
     ". Referrals Referrals Referrals Referrals ."
@@ -13,19 +25,16 @@
     ".   .      .      .      .    .";
   }
   .link{
+    font-family: 'afananregular';
     margin:auto;
     padding:5px;
-    border:black;
-    border-style: solid;
-    border-width: 3px;
-    border-radius:100%;
-    font-size: 130%;
+    font-size: 190%;
     color:crimson;
     text-decoration: none;
   }
   .Banner {
     color:royalblue;
-    background-image: url("./Images/General\ Facebook\ Header.jpg");
+    background-image: url("../Images/General\ Facebook\ Header.jpg");
     background-size:90% 120%;
     background-position: 19px -19px;
     display: grid;
@@ -36,9 +45,10 @@
   }
   
   .Title { 
+    font-family: 'afananregular';
     color:black;
     border:none;
-    font-size: 150%;
+    font-size: 220%;
     text-align: left;
     padding-left: 5px;
     grid-area: Title; 
@@ -54,6 +64,7 @@
   }
   
   .Intro { 
+    font-size: 150%;
       grid-area: Intro; 
     }
   
