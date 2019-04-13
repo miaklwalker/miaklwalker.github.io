@@ -591,7 +591,7 @@ class scoreBoard {
         this.div[8].innerHTML = `${level.balls.length}`;
     }
 }
-let index = ['Zelda', 'Retro', 'Zelda', 'Modern', 'PacMan'];
+let index = ['Retro', 'Retro', 'Zelda', 'Modern', 'PacMan'];
 let styleSelect = document.getElementById("colorSelect");
 let selectedStyle = styleSelect.selectedIndex;
 let selectionWatcher = document.querySelector('.styleSelector');
