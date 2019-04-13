@@ -1,4 +1,4 @@
-class animatedSprites{
+class animatedBackground{
     frame:number
     counter:number
     sprites:HTMLImageElement[]
@@ -16,15 +16,11 @@ class animatedSprites{
             this.sprites.push(img)
         }
     }
-    Sprite(fr:number){
+    Sprite(){
        this.counter++
-       if(this.counter%fr === 0 ){
+       if(this.counter%10 === 0 ){
            this.frame++
        }
        return this.sprites[this.frame%this.numberOfSprites]
     }
-    staticSprite(index:number){
-        return this.sprites[index]
-    }
-
 }

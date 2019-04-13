@@ -12,28 +12,26 @@ class Brick {
     health: number;
     startingHealth: number;
     effect: boolean;
-    cracked:boolean;
+
     constructor(x: number, y: number, health: number) {
         this.position = new Vector(x, y);
         this.width = (canvas.width / 10) - 2.5;
         this.height = (canvas.height / 20) - 4;
         this.health = health;
         this.startingHealth = health;
-        this.effect = false;
-        this.cracked = false;
+        this.effect = false
     }
     /**
      * @method hit -Decrements The Brick Objects Health When Hit.
      */
     hit() {
         this.health -= 1;
-        this.cracked = true;
+        return true;
     }
     /**
      * @method show -Shows the Brick object based on the Current Style
      */
     show() {
-        let crack = cracks.staticSprite(this.health)
         let setOne= brickStyle.set1[this.health-1];
         let setTwo= brickStyle.set2[this.health-1];
         if (this.effect) {
@@ -51,6 +49,5 @@ class Brick {
             ctx.fillStyle = myGradient;
             ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
         }
-        if(this.cracked===true){ctx.drawImage(crack,this.position.x,this.position.y,this.width,this.height)}
     }
 }

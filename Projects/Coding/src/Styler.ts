@@ -1,4 +1,4 @@
-let index = ['Zelda', 'Retro', 'Zelda', 'Modern', 'PacMan'];
+let index = ['Retro', 'Retro', 'Zelda', 'Modern', 'PacMan'];
 let styleSelect = <HTMLSelectElement>document.getElementById("colorSelect")
 let selectedStyle = styleSelect.selectedIndex;
 let selectionWatcher = document.querySelector('.styleSelector') as HTMLSelectElement;
@@ -12,7 +12,6 @@ selectionWatcher.addEventListener('change',(event:any) =>{
  * which returns values for Ball , Brick , Fonts , TextSize, Paddle and Background Styles
  */
 function styler(styleSheet:any) {
-    console.log(styleSheet)
     modernColors    = styleSheet.Styles[index[selectedStyle]].color
     brickStyle      = styleSheet.Styles[index[selectedStyle]].brick
     textStyle       = styleSheet.Styles[index[selectedStyle]].text
@@ -20,7 +19,6 @@ function styler(styleSheet:any) {
     paddleStyle     = styleSheet.Styles[index[selectedStyle]].paddle
     fontStyle       = styleSheet.Styles[index[selectedStyle]].font
     backgroundStyle = styleSheet.Styles[index[selectedStyle]].background
-    console.log(backgroundStyle);
     textLocation    = styleSheet.Styles[index[selectedStyle]].textLocation
 }
 

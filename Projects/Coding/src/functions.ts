@@ -17,7 +17,6 @@ function makeCanvas(name: string, width ? : string, height ? : string) {
     canvas.setAttribute("width", w);
     canvas.setAttribute("height", h);
     return canvas;
-    
 }
 
 // Registers an Event if user click the canvas
@@ -40,8 +39,8 @@ function getPowers() {
         PowerUps.doubler.loseEffect();
     }
 }
-let zelda = new animatedSprites(31)
-zelda.addSprites("../docs/zelda/tile",".jpg");
+let zelda = new animatedBackground(31)
+zelda.addSprites("../docs/tile",".jpg");
 /**
  * Sets up Loop Call Backs
  * @param name - is the name of the call back function you want to use!
@@ -54,14 +53,14 @@ function gameLoop(name: FrameRequestCallback) {
  * @description - Draws The Background of the level using the Theme selected By the Player
  */
 function drawBackground() {
-    styler(styleSheet);
     if (backgroundStyle[1] === false) {
         ctx.fillStyle = backgroundStyle[0];
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillRect(0, 0, canvas.width, canvas.height);
     }else{
-        let img = zelda.Sprite(8);
+        let img = zelda.Sprite();
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(img,0,0,canvas.width,canvas.height);
     }
 }
+

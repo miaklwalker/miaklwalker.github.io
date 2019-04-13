@@ -103,19 +103,11 @@ class Ball {
         if (this.position.y >= canvas.height - this.radius) {
             this.ballLost = true;
         }
-        // * if ball hits top of the canvas reverse direction
         if (this.position.y <= this.radius) {
             this.velocity.y *= -1;
         }
-        // * if ball hits the right side of the canvas reverse direction
-        if (this.position.x >= canvas.width - (this.radius + this.radius * .01)) {
+        if (this.position.x >= canvas.width - (this.radius + this.radius * .01) || this.position.x <= (this.radius + this.radius * .01)) {
             this.velocity.x *= -1;
-            this.position.x - 2;
-        }
-        //  * if ball hits the left side of the canvas reverse direction
-        if (this.position.x <= (this.radius + this.radius * .01)) {
-            this.velocity.x *= -1;
-            this.position.x + 2;
         }
     }
     /**
@@ -146,20 +138,18 @@ class Brick {
         this.health = health;
         this.startingHealth = health;
         this.effect = false;
-        this.cracked = false;
     }
     /**
      * @method hit -Decrements The Brick Objects Health When Hit.
      */
     hit() {
         this.health -= 1;
-        this.cracked = true;
+        return true;
     }
     /**
      * @method show -Shows the Brick object based on the Current Style
      */
     show() {
-        let crack = cracks.staticSprite(this.health);
         let setOne = brickStyle.set1[this.health - 1];
         let setTwo = brickStyle.set2[this.health - 1];
         if (this.effect) {
@@ -177,9 +167,6 @@ class Brick {
             myGradient.addColorStop(1, `${setTwo[2][0]}`);
             ctx.fillStyle = myGradient;
             ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
-        }
-        if (this.cracked === true) {
-            ctx.drawImage(crack, this.position.x, this.position.y, this.width, this.height);
         }
     }
 }
@@ -230,7 +217,7 @@ function collisions(circle, rectangle) {
     let distX = circleX - testX;
     let distY = circleY - testY;
     let distance = Math.sqrt((distX * distX) + (distY * distY));
-    if (distance <= (radius / 2) + radius * .6) {
+    if (distance <= radius / 2 + .4) {
         if (topBottom && leftRight) {
             circle.velocity.x *= -1;
             circle.velocity.y *= -1;
@@ -419,8 +406,6 @@ const level = {
             level.bricks[i].show();
             collisionsDetect(level.bricks[i]);
             if (level.bricks[i].health <= 0) {
-                let img = cracks.Sprite(5);
-                ctx.drawImage(img, level.bricks[i].position.x, level.bricks[i].position.y, level.bricks[i].width, level.bricks[i].height);
                 let broke = level.bricks.splice(i, 1);
                 if (broke[0].effect) {
                     game.powerActive = true;
@@ -591,7 +576,7 @@ class scoreBoard {
         this.div[8].innerHTML = `${level.balls.length}`;
     }
 }
-let index = ['Zelda', 'Retro', 'Zelda', 'Modern', 'PacMan'];
+let index = ['Retro', 'Retro', 'Zelda', 'Modern', 'PacMan'];
 let styleSelect = document.getElementById("colorSelect");
 let selectedStyle = styleSelect.selectedIndex;
 let selectionWatcher = document.querySelector('.styleSelector');
@@ -605,7 +590,6 @@ selectionWatcher.addEventListener('change', (event) => {
  * which returns values for Ball , Brick , Fonts , TextSize, Paddle and Background Styles
  */
 function styler(styleSheet) {
-    console.log(styleSheet);
     modernColors = styleSheet.Styles[index[selectedStyle]].color;
     brickStyle = styleSheet.Styles[index[selectedStyle]].brick;
     textStyle = styleSheet.Styles[index[selectedStyle]].text;
@@ -613,7 +597,6 @@ function styler(styleSheet) {
     paddleStyle = styleSheet.Styles[index[selectedStyle]].paddle;
     fontStyle = styleSheet.Styles[index[selectedStyle]].font;
     backgroundStyle = styleSheet.Styles[index[selectedStyle]].background;
-    console.log(backgroundStyle);
     textLocation = styleSheet.Styles[index[selectedStyle]].textLocation;
 }
 // Classes
@@ -665,7 +648,7 @@ class Vector {
         return this;
     }
 }
-class animatedSprites {
+class animatedBackground {
     constructor(numberOfSprites) {
         this.frame = 0;
         this.counter = 0;
@@ -679,15 +662,12 @@ class animatedSprites {
             this.sprites.push(img);
         }
     }
-    Sprite(fr) {
+    Sprite() {
         this.counter++;
-        if (this.counter % fr === 0) {
+        if (this.counter % 10 === 0) {
             this.frame++;
         }
         return this.sprites[this.frame % this.numberOfSprites];
-    }
-    staticSprite(index) {
-        return this.sprites[index];
     }
 }
 let frame = 0;
@@ -729,8 +709,8 @@ function getPowers() {
         PowerUps.doubler.loseEffect();
     }
 }
-let zelda = new animatedSprites(31);
-zelda.addSprites("../docs/zelda/tile", ".jpg");
+let zelda = new animatedBackground(31);
+zelda.addSprites("../docs/tile", ".jpg");
 /**
  * Sets up Loop Call Backs
  * @param name - is the name of the call back function you want to use!
@@ -743,14 +723,13 @@ function gameLoop(name) {
  * @description - Draws The Background of the level using the Theme selected By the Player
  */
 function drawBackground() {
-    styler(styleSheet);
     if (backgroundStyle[1] === false) {
         ctx.fillStyle = backgroundStyle[0];
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
     else {
-        let img = zelda.Sprite(8);
+        let img = zelda.Sprite();
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     }
@@ -782,10 +761,15 @@ let paddleStyle;
 let textStyle;
 let ballStyle;
 let fontStyle;
-let styleSheet;
 let backgroundStyle;
-let cracks = new animatedSprites(5);
-cracks.addSprites("../docs/cracks/crack0", ".png");
+async function GetJson() {
+    let response = await fetch("../lib/JSON/BrickBreaker.json");
+    let styleSheet = await response.json();
+    return styleSheet;
+}
+GetJson()
+    .then(Json => stylesJson = Json)
+    .then(() => styler(stylesJson));
 const keyBoard = {
     ArrowLeft: false,
     ArrowRight: false,
@@ -860,307 +844,4 @@ function draw() {
     player.show();
     gameLoop(draw);
 }
-styleSheet = {
-    "Credits": {
-        "Game Title": "Brick Break",
-        "Lead Coder": "Michael Walker",
-        "Original Idea": "Steve Wozniak",
-        "This project": "is FREE to anyone"
-    },
-    "Classes": {
-        "Ball": "Methods",
-        "Paddle": "Methods",
-        "Brick": "Methods",
-        "Ai": "methods"
-    },
-    "Styles": {
-        "Modern": {
-            "brick": {
-                "set1": [
-                    [
-                        ["white"],
-                        ["indigo"],
-                        ["indigo"]
-                    ],
-                    [
-                        ["white"],
-                        ["purple"],
-                        ["purple"]
-                    ],
-                    [
-                        ["white"],
-                        ["blueViolet"],
-                        ["blueviolet"]
-                    ],
-                    [
-                        ["white"],
-                        ["mediumOrchid"],
-                        ["mediumOrchid"]
-                    ],
-                    [
-                        ["white"],
-                        ["orchid"],
-                        ["orchid"]
-                    ]
-                ],
-                "set2": [
-                    [
-                        ["white"],
-                        ["navy"],
-                        ["navy"]
-                    ],
-                    [
-                        ["white"],
-                        ["blue"],
-                        ["blue"]
-                    ],
-                    [
-                        ["white"],
-                        ["deepSkyBlue"],
-                        ["dodgerBlue"]
-                    ],
-                    [
-                        ["white"],
-                        ["lightBlue"],
-                        ["skyBlue"]
-                    ],
-                    [
-                        ["white"],
-                        ["lightCyan"],
-                        ["lightCyan"]
-                    ]
-                ]
-            },
-            "ball": ["white", "red"],
-            "text": ["36px 'Eternal Knight Laser Itallic'"],
-            "textLocation": [200, 50],
-            "color": [
-                [218, 247, 166],
-                [255, 195, 0],
-                [255, 87, 51],
-                [199, 0, 57],
-                [133, 193, 233],
-                [46, 204, 113]
-            ],
-            "font": ["'Eternal Knight Laser Itallic'", "30px"],
-            "paddle": ["snow", "dimGray", "black"],
-            "background": ["lightgrey", false]
-        },
-        "Retro": {
-            "brick": {
-                "set1": [
-                    [
-                        ["dimGray"],
-                        ["dimGray"],
-                        ["dimGray"]
-                    ],
-                    [
-                        ["gray"],
-                        ["gray"],
-                        ["gray"]
-                    ],
-                    [
-                        ["darkGray"],
-                        ["darkGray"],
-                        ["darkGray"]
-                    ],
-                    [
-                        ["lightGray"],
-                        ["lightGray"],
-                        ["lightGray"]
-                    ],
-                    [
-                        ["white"],
-                        ["white"],
-                        ["white"]
-                    ]
-                ],
-                "set2": [
-                    [
-                        ["black"],
-                        ["black"],
-                        ["black"]
-                    ],
-                    [
-                        ["dimGray"],
-                        ["dimGray"],
-                        ["dimGray"]
-                    ],
-                    [
-                        ["gray"],
-                        ["gray"],
-                        ["gray"]
-                    ],
-                    [
-                        ["darkGray"],
-                        ["darkGray"],
-                        ["darkGray"]
-                    ],
-                    [
-                        ["lightGray"],
-                        ["lightGray"],
-                        ["lightGray"]
-                    ]
-                ]
-            },
-            "ball": ["grey", "grey"],
-            "text": ["24px 'Press Start 2P'"],
-            "textLocation": [150, 50],
-            "color": [
-                [255, 255, 255],
-                [255, 255, 255],
-                [0, 0, 0],
-                [0, 0, 0],
-                [0, 0, 0],
-                [255, 255, 255]
-            ],
-            "font": ["'Press Start 2P'", "15px"],
-            "paddle": ["black", "black", "black"],
-            "background": ["white", false]
-        },
-        "Zelda": {
-            "brick": {
-                "set1": [
-                    [
-                        ["white"],
-                        ["indigo"],
-                        ["indigo"]
-                    ],
-                    [
-                        ["white"],
-                        ["purple"],
-                        ["purple"]
-                    ],
-                    [
-                        ["white"],
-                        ["blueViolet"],
-                        ["blueviolet"]
-                    ],
-                    [
-                        ["white"],
-                        ["mediumOrchid"],
-                        ["mediumOrchid"]
-                    ],
-                    [
-                        ["white"],
-                        ["orchid"],
-                        ["orchid"]
-                    ]
-                ],
-                "set2": [
-                    [
-                        ["khaki"],
-                        ["gold"],
-                        ["gold"]
-                    ],
-                    [
-                        ["lightYellow"],
-                        ["yellow"],
-                        ["gold"]
-                    ],
-                    [
-                        ["silver"],
-                        ["gainsboro"],
-                        ["silver"]
-                    ],
-                    [
-                        ["royalBlue"],
-                        ["mediumblue"],
-                        ["navy"]
-                    ],
-                    [
-                        ["yellow"],
-                        ["gold"],
-                        ["gold"]
-                    ]
-                ]
-            },
-            "ball": ["powderBlue", "royalBlue"],
-            "text": ["48px 'Triforce'"],
-            "textLocation": [100, 50],
-            "color": [
-                [247, 249, 249],
-                [34, 101, 226],
-                [190, 216, 212],
-                [120, 213, 215],
-                [99, 210, 255],
-                [255, 255, 255]
-            ],
-            "font": ["Triforce", "34px"],
-            "paddle": ["blue", "mediumBlue", "darkBlue"],
-            "background": ["rgb(44,176,26)", true]
-        },
-        "PacMan": {
-            "brick": {
-                "set1": [
-                    [
-                        ["navy"],
-                        ["blue"],
-                        ["navy"]
-                    ],
-                    [
-                        ["navy"],
-                        ["blue"],
-                        ["navy"]
-                    ],
-                    [
-                        ["navy"],
-                        ["blue"],
-                        ["navy"]
-                    ],
-                    [
-                        ["navy"],
-                        ["blue"],
-                        ["navy"]
-                    ],
-                    [
-                        ["navy"],
-                        ["blue"],
-                        ["navy"]
-                    ]
-                ],
-                "set2": [
-                    [
-                        ["darkRed"],
-                        ["red"],
-                        ["darkRed"]
-                    ],
-                    [
-                        ["#FF1493"],
-                        ["#ffb8ff"],
-                        ["#FF1493"]
-                    ],
-                    [
-                        ["dodgerBlue"],
-                        ["#00ffff"],
-                        ["dodgerBlue"]
-                    ],
-                    [
-                        ["darkOrange"],
-                        ["FFB852"],
-                        ["darkOrange"]
-                    ],
-                    [
-                        ["gold"],
-                        ["yellow"],
-                        ["gold"]
-                    ]
-                ]
-            },
-            "ball": ["rgb(255,255,0)", "rgb(255,255,0)"],
-            "text": ["35px PacFont"],
-            "textLocation": [200, 50],
-            "color": [
-                [255, 0, 0],
-                [255, 184, 255],
-                [0, 255, 255],
-                [255, 184, 82],
-                [255, 255, 0],
-                [0, 0, 0]
-            ],
-            "font": ["PacFont", "25px"],
-            "paddle": ["rgb(33,33,222)", "rgb(33,33,222)", "rgb(33,33,222)"],
-            "background": ["rgb(0, 0,0)", false]
-        }
-    }
-};
+//# sourceMappingURL=main.js.map

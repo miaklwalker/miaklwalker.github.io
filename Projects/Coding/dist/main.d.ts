@@ -66,12 +66,11 @@ declare class Brick {
     health: number;
     startingHealth: number;
     effect: boolean;
-    cracked: boolean;
     constructor(x: number, y: number, health: number);
     /**
      * @method hit -Decrements The Brick Objects Health When Hit.
      */
-    hit(): void;
+    hit(): boolean;
     /**
      * @method show -Shows the Brick object based on the Current Style
      */
@@ -269,15 +268,14 @@ declare class Vector {
     div(divisor: Vector | number): void;
     limit(max: number): this;
 }
-declare class animatedSprites {
+declare class animatedBackground {
     frame: number;
     counter: number;
     sprites: HTMLImageElement[];
     numberOfSprites: number;
     constructor(numberOfSprites: number);
     addSprites(url: string, format: string): void;
-    Sprite(fr: number): HTMLImageElement;
-    staticSprite(index: number): HTMLImageElement;
+    Sprite(): HTMLImageElement;
 }
 declare let frame: number;
 declare let counter: number;
@@ -297,7 +295,7 @@ declare let clickHandler: () => void;
  * method.
  */
 declare function getPowers(): void;
-declare let zelda: animatedSprites;
+declare let zelda: animatedBackground;
 /**
  * Sets up Loop Call Backs
  * @param name - is the name of the call back function you want to use!
@@ -332,9 +330,8 @@ declare let paddleStyle: string[];
 declare let textStyle: string[];
 declare let ballStyle: string[];
 declare let fontStyle: string[];
-declare let styleSheet: any;
 declare let backgroundStyle: [string, boolean];
-declare let cracks: animatedSprites;
+declare function GetJson(): Promise<BrickBreaker>;
 declare const keyBoard: keyBoard;
 /**
  * @name game
@@ -343,3 +340,4 @@ declare const keyBoard: keyBoard;
 declare const game: game;
 declare function setup(): void;
 declare function draw(): void;
+//# sourceMappingURL=main.d.ts.map

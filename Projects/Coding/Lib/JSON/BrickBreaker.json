@@ -1,4 +1,4 @@
-styleSheet = {
+{
     "Credits": {
         "Game Title": "Brick Break",
         "Lead Coder": "Michael Walker",
@@ -72,7 +72,7 @@ styleSheet = {
             },
             "ball": ["white", "red"],
             "text": ["36px 'Eternal Knight Laser Itallic'"],
-            "textLocation": [200,50],
+            "textLocation": [160,50],
             "color": [
                 [218, 247, 166],
                 [255, 195, 0],
@@ -145,7 +145,7 @@ styleSheet = {
             },
             "ball": ["grey", "grey"],
             "text": ["24px 'Press Start 2P'"],
-            "textLocation": [150,50],
+            "textLocation": [170,50],
             "color": [
                 [255, 255, 255],
                 [255, 255, 255],
@@ -218,7 +218,7 @@ styleSheet = {
             },
             "ball": ["powderBlue", "royalBlue"],
             "text": ["48px 'Triforce'"],
-            "textLocation": [100,50],
+            "textLocation": [170,50],
             "color": [
                 [247, 249, 249],
                 [34, 101, 226],
@@ -279,7 +279,7 @@ styleSheet = {
                     ],
                     [
                         ["darkOrange"],
-                        ["FFB852"],
+                        ["#FFB852"],
                         ["darkOrange"]
                     ],
                     [
