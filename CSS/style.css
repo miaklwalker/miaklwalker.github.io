@@ -1,6 +1,11 @@
 
 /* Fonts */
-
+@font-face {
+  font-family: 'afananregular';
+  src: url('../Fonts/afanan.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 /* Universal Selector */
 *{
   font-family:'Open Sans';

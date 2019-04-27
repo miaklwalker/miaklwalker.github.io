@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'afananregular';
+    src: url('../Fonts/afanan.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 *{
     font-family:'Open Sans';
   }
@@ -12,15 +19,15 @@ body{
                                      " .  subNav intro   intro     . "
                                      " .  subNav goal   goal     . "
                                      " .  .  quote  quote    . "
-                                     ". footer footer footer .";
+                                     "footer footer footer footer footer";
 }
 
 .banner {
     box-shadow: -3px -4px 2px inset black;
     color:royalblue;
-    background-image:url("../Images/family.png");
-    background-size:110% 110%;
-    background-position: 2% 0%;
+    background-image:url("../Images/TheFam.jpg");
+    background-size: 100% 210%;
+    background-position: 75% 50%;
     display: grid;
     grid-template-columns: 1fr 0.6fr 1.4fr;
     grid-template-rows: 0.3fr 1.7fr;
@@ -50,21 +57,53 @@ body{
   }
 .intro{
     grid-area: intro;
-    background:blue;
+
 }
 .goal{
     grid-area: goal;
-    background:yellow;
+
 }
 .quote{
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+
+    color: #383838;
     grid-area:quote;
-    background:pink;
+
+}
+.quote :before {
+    font-family: Georgia, serif;
+    font-size: 6em;
+
+    top: 0;
+    left: 0;
+    content: "\201C";
 }
 .subNav{
     grid-area:subNav;
 }
 .footer{
+    margin:10%;
+    color:powderblue;
+    background:black;
     text-align: center;
     grid-area: footer;
-    background:gray;
+
+}
+header{
+    font-family: 'afananregular';
+    color:black;
+    border:none;
+    font-size: 220%;
+    text-align: left;
+    padding-left: 5px;
+}
+li > a {
+    font-family: 'afananregular';
+    margin:auto;
+    padding:5px;
+    font-size: 190%;
+    color:royalblue;
+    text-decoration: none; 
 }
