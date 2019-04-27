@@ -1,11 +1,70 @@
-.Banner{
-    grid-area: banner;
-    background-image:url("../Images/family.png");
+*{
+    font-family:'Open Sans';
+  }
+body{
+    text-align:left;
 }
 .container{
     display:grid;
-    grid-template-rows:  1fr 1fr 1fr;
-    grid-template-columns: 1fr ;
-    grid-template-areas: "banner"
-                          "";
+    grid-template-rows:   1.5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: .3fr 1fr 1fr 1fr .3fr;
+    grid-template-areas: " . banner banner banner . "
+                                     " .  subNav intro   intro     . "
+                                     " .  subNav goal   goal     . "
+                                     " .  .  quote  quote    . "
+                                     ". footer footer footer .";
+}
+
+.banner {
+    box-shadow: -3px -4px 2px inset black;
+    color:royalblue;
+    background-image:url("../Images/family.png");
+    background-size:110% 110%;
+    background-position: 2% 0%;
+    display: grid;
+    grid-template-columns: 1fr 0.6fr 1.4fr;
+    grid-template-rows: 0.3fr 1.7fr;
+    grid-template-areas: "Title . NavCont"
+                                              ". . .";
+    grid-area: banner;
+  }
+  .NavCont {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr 1fr 1.1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". . . .";
+    grid-area: NavCont;
+  }
+  .link{
+    font-family: 'afananregular';
+    margin:auto;
+    padding:5px;
+    font-size: 190%;
+    color:crimson;
+    text-decoration: none;
+  }
+  .sidebar{
+      font-display: 'afananregular';
+      color:black;
+      list-style: none;
+  }
+.intro{
+    grid-area: intro;
+    background:blue;
+}
+.goal{
+    grid-area: goal;
+    background:yellow;
+}
+.quote{
+    grid-area:quote;
+    background:pink;
+}
+.subNav{
+    grid-area:subNav;
+}
+.footer{
+    text-align: center;
+    grid-area: footer;
+    background:gray;
 }
