@@ -13,9 +13,9 @@ body{
 }
 .container{
     display:grid;
-    grid-template-rows:   1.5fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:   1.4fr 1fr 1fr 1fr 1fr;
     grid-template-columns: .3fr 1fr 1fr 1fr .3fr;
-    grid-template-areas: " . banner banner banner . "
+    grid-template-areas: " banner banner banner banner banner "
                                      " .  subNav intro   intro     . "
                                      " .  subNav goal   goal     . "
                                      " .  .  quote  quote    . "
@@ -67,8 +67,7 @@ body{
     font-family: Georgia, serif;
     font-size: 18px;
     font-style: italic;
-
-    color: #383838;
+    color:gray;
     grid-area:quote;
 
 }
@@ -107,3 +106,16 @@ li > a {
     color:royalblue;
     text-decoration: none; 
 }
+  
+.Title { 
+    font-family: 'afananregular';
+    color:black;
+    border:none;
+    font-size: 220%;
+    text-align: left;
+    padding-left: 5px;
+    grid-area: Title; 
+  }
+  cite{
+    color:gray;
+  }
