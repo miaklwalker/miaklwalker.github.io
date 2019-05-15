@@ -11,10 +11,11 @@
 .container{
   display:grid;
   grid-template-columns: 1fr 1fr 1.3fr 1.4fr .3fr;
-  grid-template-rows: .1fr .2fr .5fr;
+  grid-template-rows: .1fr .2fr .2fr .5fr;
   grid-template-areas: " banner  banner banner banner banner "
                                     ". subNav intro intro . " 
-                                    " .  subNav Brick Snake  . "   ;
+                                    " .  subNav Brick Snake  . "
+                                    ". subNav War Dice ."   ;
 
 }
 
@@ -82,6 +83,12 @@ li > a {
 
 .Brick{
   grid-area: Brick ;
+}
+.War{
+  grid-area: War ;
+}
+.Dice{
+  grid-area: Dice ;
 }
 
 .sidebar{
