@@ -1,6 +1,7 @@
 let container = (`
 <header class='about'>  
-<h1 class='osc'><a href="index.html">MW</a></h1> 
+<h1 class='osc'><a href="index.html">MW </a></h1>
+<a  class='osc home' href="index.html">home</a> 
 </header>
 <div class="spaceL"></div>
 <main class="main-container">
@@ -31,7 +32,6 @@ let container = (`
         <li><a href='#' class='skill' id='React'>React</a></li>
         <hr>
         <li><a href='#' class='skill' id='Node'>Node</a></li>
-        <hr>
       </ul>
     </div>
     <div class="project-text">
@@ -42,7 +42,7 @@ let container = (`
 <hr>
 <footer>
   <small>
-    Michael Walker 2020 
+    Michael Walker 2020 &copy;
     <br>
     No Libraries / Frameworks  were harmed in the making of this web site 
   </small>
