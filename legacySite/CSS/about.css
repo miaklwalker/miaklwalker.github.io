@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'afananregular';
+    src: url('../Fonts/afanan.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+*{
+    font-family:'Open Sans';
+  }
+body{
+    text-align:left;
+}
+.container{
+    display:grid;
+    grid-template-rows:   1.4fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: .3fr 1fr 1fr 1fr .3fr;
+    grid-template-areas: " banner banner banner banner banner "
+                                     " .  subNav intro   intro     . "
+                                     " .  subNav goal   goal     . "
+                                     " .  .  quote  quote    . "
+                                     "footer footer footer footer footer";
+}
+
+.banner {
+    box-shadow: -3px -4px 2px inset black;
+    color:royalblue;
+    background-image:url("../Images/TheFam.jpg");
+    background-size: 100% 210%;
+    background-position: 75% 50%;
+    display: grid;
+    grid-template-columns: 1fr 0.6fr 1.4fr;
+    grid-template-rows: 0.3fr 1.7fr;
+    grid-template-areas: "Title . NavCont"
+                                              ". . .";
+    grid-area: banner;
+  }
+  .NavCont {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr 1fr 1.1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". . . .";
+    grid-area: NavCont;
+  }
+  .link{
+    font-family: 'afananregular';
+    margin:auto;
+    padding:5px;
+    font-size: 190%;
+    color:crimson;
+    text-decoration: none;
+  }
+  .sidebar{
+      font-display: 'afananregular';
+      color:black;
+      list-style: none;
+  }
+.intro{
+    grid-area: intro;
+
+}
+.goal{
+    grid-area: goal;
+
+}
+.quote{
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    color:gray;
+    grid-area:quote;
+
+}
+.quote :before {
+    font-family: Georgia, serif;
+    font-size: 6em;
+
+    top: 0;
+    left: 0;
+    content: "\201C";
+}
+.subNav{
+    grid-area:subNav;
+}
+.footer{
+    margin:10%;
+    color:powderblue;
+    background:black;
+    text-align: center;
+    grid-area: footer;
+
+}
+header{
+    font-family: 'afananregular';
+    color:black;
+    border:none;
+    font-size: 220%;
+    text-align: left;
+    padding-left: 5px;
+}
+li > a {
+    font-family: 'afananregular';
+    margin:auto;
+    padding:5px;
+    font-size: 190%;
+    color:royalblue;
+    text-decoration: none; 
+}
+  
+.Title { 
+    font-family: 'afananregular';
+    color:black;
+    border:none;
+    font-size: 220%;
+    text-align: left;
+    padding-left: 5px;
+    grid-area: Title; 
+  }
+  cite{
+    color:gray;
+  }

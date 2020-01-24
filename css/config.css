@@ -1,0 +1,49 @@
+:root{
+  --dark-black: #17252A;
+  --dark-green: #2B7A78;
+  --light-green:#3AAFA9;
+  --light-gray:#DEF2F1;    
+  --off-white: #FEFFFF;
+  --light-purple:#564787;
+  --white-space-width:10vw;
+  --transparent-white:rgba(255, 255, 255, 0.70);
+}
+.os {
+  font-family: 'Open Sans', sans-serif;
+}
+.osc {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+.ap {
+  font-family: 'Anonymous Pro', monospace;
+}
+.green{
+  color: var(--light-green);
+}
+.dark-green{
+  color:var(--dark-green);
+}
+.black{
+  color: var(--dark-black);
+}
+.purple{
+  color:var(--light-purple);
+}
+.white{
+  color:var(--off-white);
+}
+.transparent{
+  color:var(--transparent-white)
+}
+.transparent-dark{
+  color:var(--transparent-dark)
+}
+.transparent-bg{
+  background-color:var(--transparent-white)
+}
+.transparent-dark-bg{
+  background-color:var(--transparent-dark)
+}
+.selected{
+  color:var(--dark-green)
+}

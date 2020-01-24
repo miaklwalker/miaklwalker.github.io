@@ -1,0 +1,42 @@
+@import url('config.css');
+
+header.homepage{
+  display: flex;
+  box-sizing: border-box;
+  flex-flow: column;
+  background:url("../img/apple-dark.jpg"),rgba(0, 0, 0, 0.658);
+  height:100vh;
+  width:100vw;
+  background-size: 100% 100%;
+  justify-content: start;
+  padding-top: 10vh;
+  text-align: center;
+  font-weight: lighter;
+  text-transform: capitalize;
+}
+.background{
+  background:rgba(14, 14, 14, 0.705);
+  padding: auto;
+}
+header.homepage>.background>h1{
+  font-size: 7rem;
+  margin:1%;
+}
+header.homepage>.background>h2{
+  font-size: 3rem;
+  margin:1%;
+  color: var(--off-white);
+}
+header.homepage>.background>h3{
+  font-size: 2rem;
+  margin:1%;
+}
+header.homepage>.background>h3>a{
+  color:var(--light-green);
+}
+a{
+  text-decoration: none;
+}
+.fa-github{
+  color:var(--off-white);
+}
