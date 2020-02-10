@@ -7,7 +7,21 @@ const mainContainer = document.querySelector('#main-container');
 const navLinks = document.querySelectorAll('.nav-link');
 const techListSmall = document.querySelector('.tech');
 const techListChildren = techListSmall.children;
+const techFilterList = document.querySelector('#tech-filter');
+const techFilterChildren = techFilterList.children;
 let unit = document.body.clientHeight;
+for (let child of techFilterChildren) {
+    const span = document.createElement('span');
+    const icon = iconLibrary[child.className];
+    span.innerHTML = icon.code;
+    span.className = child.className;
+    const SVG = span.children[0];
+    SVG.style.fill = `#${icon.color}`;
+    SVG.style.width = `2vw`;
+    SVG.style.height = `4vh`;
+    child.addEventListener('click', (e) => console.log(e.target.parentNode.parentNode.className));
+    child.append(span);
+}
 for (let child of techListChildren) {
     const span = document.createElement('span');
     const icon = iconLibrary[child.id];
