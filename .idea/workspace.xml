@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06f347bf-ba74-4969-8d9c-388bd6206dea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/_layout.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/scss/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/scss/main.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/typescript/icons.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typescript/icons.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/typescript/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/typescript/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/typescript/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/typescript/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/typescript/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typescript/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/typescript/projects.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/typescript/projects.js.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +92,7 @@
       <workItem from="1581309647163" duration="247000" />
       <workItem from="1581316043184" duration="88000" />
       <workItem from="1581318205407" duration="9397000" />
+      <workItem from="1581328262533" duration="272000" />
     </task>
     <task id="LOCAL-00001" summary="Adding SVG Icons to the project">
       <created>1581324417033</created>
