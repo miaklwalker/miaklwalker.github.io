@@ -38,6 +38,7 @@ $primary-yellow: #eed420;
 $secondary-yellow:#6B9F9A;
 // Styles
 html{
+  height:initial;
   @include for-phone-only{
       font-size: 5pt;
   }

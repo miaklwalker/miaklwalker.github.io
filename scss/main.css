@@ -142,6 +142,7 @@ body .container {
   }
 }
 html {
+  height: initial;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
 }
