@@ -1,7 +1,7 @@
 const projects = [
     {
         "name": "The Legend Of Zelda",
-        "caption": '',
+        "caption": 'Recreated from scratch!',
         "imgUrl": '../../images/LOZ.webp',
         "languages": ["TypeScript", "JavaScript", "HTML", "CSS"],
         "SourceCode": "https://github.com/miaklwalker/thelegendofzelda",
@@ -10,8 +10,8 @@ const projects = [
     },
     {
         "name": "Tile Mapper",
-        "caption": '',
-        "imgUrl": '../../images/Tilemapper.webp',
+        "caption": 'For Mapping 2D Tile-based games',
+        "imgUrl": '../../images/tilemapper.webp',
         "languages": ["JavaScript"],
         "SourceCode": "https://github.com/miaklwalker/TileMapper",
         "DemoLink": "https://codesandbox.io/s/tilemapperjs-gimgd",
@@ -19,7 +19,7 @@ const projects = [
     },
     {
         "name": "Brick Breaker",
-        "caption": '',
+        "caption": 'My first Game!',
         "imgUrl": '../../images/brickbreaker.webp',
         "languages": ["JavaScript", "HTML", "CSS"],
         "SourceCode": "https://github.com/miaklwalker/BrickBreaker",
@@ -28,7 +28,7 @@ const projects = [
     },
     {
         "name": "Magic 8 Ball",
-        "caption": '',
+        "caption": 'Immutable State and Honest Answers',
         "imgUrl": '../../images/magic8.webp',
         "languages": ["JavaScript", "HTML", "CSS"],
         "SourceCode": "https://github.com/miaklwalker/Magic8Ball",
@@ -37,7 +37,7 @@ const projects = [
     },
     {
         "name": "Snake",
-        "caption": '',
+        "caption": '2 hour Coding Challenge',
         "imgUrl": '../../images/snake.webp',
         "languages": ["JavaScript", "HTML", "CSS"],
         "SourceCode": "https://github.com/miaklwalker/Snake",
@@ -46,7 +46,7 @@ const projects = [
     },
     {
         "name": "Redux Todo List",
-        "caption": '',
+        "caption": 'From The Redux Tutorial Site',
         "imgUrl": '../../images/reactTodo.webp',
         "languages": ["React", "Sass", "JavaScript", "Redux"],
         "SourceCode": "https://github.com/miaklwalker/Redux-Todo-List",
@@ -55,7 +55,7 @@ const projects = [
     },
     {
         "name": "Dice Roller",
-        "caption": '',
+        "caption": 'My First App Ever',
         "imgUrl": '../../images/diceRoller.webp',
         "languages": ["JavaScript", "HTML", "CSS"],
         "SourceCode": "https://github.com/miaklwalker/DiceRollerMyFirstApp",
@@ -64,7 +64,7 @@ const projects = [
     },
     {
         "name": "War",
-        "caption": '',
+        "caption": 'My first Game , with a light refactor',
         "imgUrl": '../../images/war.webp',
         "languages": ["JavaScript", "HTML", "CSS"],
         "SourceCode": "https://github.com/miaklwalker/WarTypeScript",
@@ -73,7 +73,7 @@ const projects = [
     },
     {
         "name": "BabaIsYou JS",
-        "caption": '',
+        "caption": 'remade from scratch in JavaScript',
         "imgUrl": '../../images/babaisyou.webp',
         "languages": ["JavaScript", "HTML", "CSS"],
         "SourceCode": "https://github.com/miaklwalker/JavaScriptIsYou",
@@ -82,7 +82,7 @@ const projects = [
     },
     {
         "name": "BKeeper",
-        "caption": '',
+        "caption": 'My First Full Stack App',
         "imgUrl": '../../images/bkeeper.webp',
         "languages": ["JavaScript", "BootStrap", "TypeScript", "React", "Cypress"],
         "SourceCode": "https://github.com/miaklwalker/b-keeper",
@@ -91,7 +91,7 @@ const projects = [
     },
     {
         "name": "Backend",
-        "caption": '',
+        "caption": 'My First Rest Api Backend',
         "imgUrl": '../../images/bkeeper.webp',
         "languages": ["Node", "Postman", "Mongoose", "MongoDB"],
         "SourceCode": "https://github.com/miaklwalker/backend",

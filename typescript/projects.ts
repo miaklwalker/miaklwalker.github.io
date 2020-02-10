@@ -10,7 +10,7 @@ export interface project {
 const projects:project[] =[
         {
             "name":"The Legend Of Zelda",
-            "caption":'',
+            "caption":'Recreated from scratch!',
             "imgUrl":'../../images/LOZ.webp',
             "languages":["TypeScript","JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/thelegendofzelda",
@@ -19,8 +19,8 @@ const projects:project[] =[
         },
         {
             "name":"Tile Mapper",
-            "caption":'',
-            "imgUrl":'../../images/Tilemapper.webp',
+            "caption":'For Mapping 2D Tile-based games',
+            "imgUrl":'../../images/tilemapper.webp',
             "languages":["JavaScript"],
             "SourceCode":"https://github.com/miaklwalker/TileMapper",
             "DemoLink":"https://codesandbox.io/s/tilemapperjs-gimgd",
@@ -28,7 +28,7 @@ const projects:project[] =[
         },
         {
             "name":"Brick Breaker",
-            "caption":'',
+            "caption":'My first Game!',
             "imgUrl":'../../images/brickbreaker.webp',
             "languages":["JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/BrickBreaker",
@@ -37,7 +37,7 @@ const projects:project[] =[
         },
         {
             "name":"Magic 8 Ball",
-            "caption":'',
+            "caption":'Immutable State and Honest Answers',
             "imgUrl":'../../images/magic8.webp',
             "languages":["JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/Magic8Ball",
@@ -46,7 +46,7 @@ const projects:project[] =[
         },
         {
             "name":"Snake",
-            "caption":'',
+            "caption":'2 hour Coding Challenge',
             "imgUrl":'../../images/snake.webp',
             "languages":["JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/Snake",
@@ -55,7 +55,7 @@ const projects:project[] =[
         },
         {
             "name":"Redux Todo List",
-            "caption":'',
+            "caption":'From The Redux Tutorial Site',
             "imgUrl":'../../images/reactTodo.webp',
             "languages":["React","Sass","JavaScript","Redux"],
             "SourceCode":"https://github.com/miaklwalker/Redux-Todo-List",
@@ -64,7 +64,7 @@ const projects:project[] =[
         },
         {
             "name":"Dice Roller",
-            "caption":'',
+            "caption":'My First App Ever',
             "imgUrl":'../../images/diceRoller.webp',
             "languages":["JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/DiceRollerMyFirstApp",
@@ -73,7 +73,7 @@ const projects:project[] =[
         },
         {
             "name":"War",
-            "caption":'',
+            "caption":'My first Game , with a light refactor',
             "imgUrl":'../../images/war.webp',
             "languages":["JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/WarTypeScript",
@@ -82,7 +82,7 @@ const projects:project[] =[
         },
         {
             "name":"BabaIsYou JS",
-            "caption":'',
+            "caption":'remade from scratch in JavaScript',
             "imgUrl":'../../images/babaisyou.webp',
             "languages":["JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/JavaScriptIsYou",
@@ -91,7 +91,7 @@ const projects:project[] =[
         },
         {
             "name":"BKeeper",
-            "caption":'',
+            "caption":'My First Full Stack App',
             "imgUrl":'../../images/bkeeper.webp',
             "languages":["JavaScript","BootStrap","TypeScript","React","Cypress"],
             "SourceCode":"https://github.com/miaklwalker/b-keeper",
@@ -100,13 +100,13 @@ const projects:project[] =[
         },
         {
             "name":"Backend",
-            "caption":'',
+            "caption":'My First Rest Api Backend',
             "imgUrl":'../../images/bkeeper.webp',
             "languages":["Node","Postman","Mongoose","MongoDB"],
             "SourceCode":"https://github.com/miaklwalker/backend",
             "DemoLink":"http://www.band-keeper.com/",
             "description":"My first Full-Stack Application.<br> It uses Mongoose, Express, React, Node.<br> It's a full-featured CRM.<br> It was designed to help music studios manage artist's while letting the focus on what matters.<br> Making good music."
         }
-    ]
+    ];
 
 export default projects

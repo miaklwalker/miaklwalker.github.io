@@ -63,6 +63,9 @@ html{
         a{
           color:inherit;
           text-decoration: none;
+          &:hover{
+            color:$primary-orange;
+          }
         }
       }
     }
@@ -92,6 +95,11 @@ html{
             color: $primary-white;
             font-size: 2rem;
             list-style: none;
+            svg{
+              height:10vh;
+              display: inline;
+            }
+
           }
           >h2{
             font-family: 'Rock Salt', cursive;
@@ -146,6 +154,7 @@ html{
               small{
                 font-size: 1rem;
                 font-family: "Times New Roman", serif;
+                font-style: italic;
                 color:lighten($primary-black,55);
               }
               &:hover{
@@ -204,6 +213,9 @@ html{
                     font-weight: bolder;
                     text-decoration: none;
                     box-shadow: dimgray 2px 3px;
+                    &:hover{
+                      text-shadow:$primary-orange 1px 1px;
+                    }
                   }
                 }
               }

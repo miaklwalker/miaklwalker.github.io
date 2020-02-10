@@ -1,10 +1,21 @@
 import makeCard from "./makeCard.js";
 import projects from "./projects.js";
+import iconLibrary from "./icons.js";
 const cardContainer = document.querySelector('.LRcontainer');
 const header = document.querySelector('.header');
 const mainContainer = document.querySelector('#main-container');
 const navLinks = document.querySelectorAll('.nav-link');
+const techListSmall = document.querySelector('.tech');
+const techListChildren = techListSmall.children;
 let unit = document.body.clientHeight;
+for (let child of techListChildren) {
+    const span = document.createElement('span');
+    const icon = iconLibrary[child.id];
+    span.innerHTML = icon.code;
+    const SVG = span.children[0];
+    SVG.style.fill = `#${icon.color}`;
+    child.append(span);
+}
 function chooseColor(scrollPosition) {
     let max = unit * 3;
     if (scrollPosition < unit * 1.01) {

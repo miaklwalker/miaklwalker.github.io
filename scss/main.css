@@ -173,6 +173,9 @@ html header nav ul a {
   color: inherit;
   text-decoration: none;
 }
+html header nav ul a:hover {
+  color: tomato;
+}
 html main section#section_one {
   background-color: tomato;
   font-size: 5rem;
@@ -197,6 +200,10 @@ html main section#section_two .container > ul {
   color: #FFFFFF;
   font-size: 2rem;
   list-style: none;
+}
+html main section#section_two .container > ul svg {
+  height: 10vh;
+  display: inline;
 }
 html main section#section_two .container > h2 {
   font-family: "Rock Salt", cursive;
@@ -241,6 +248,7 @@ html main section#section_four .container details summary {
 html main section#section_four .container details summary small {
   font-size: 1rem;
   font-family: "Times New Roman", serif;
+  font-style: italic;
   color: #8c8c8c;
 }
 html main section#section_four .container details summary:hover {
@@ -299,6 +307,9 @@ html main section#section_four .container details .LRcontainer .card .btnContain
   font-weight: bolder;
   text-decoration: none;
   box-shadow: dimgray 2px 3px;
+}
+html main section#section_four .container details .LRcontainer .card .btnContainer a:hover {
+  text-shadow: tomato 1px 1px;
 }
 html main section#section_four .container details[open] summary ~ * {
   animation: open 1s ease-in-out;

@@ -16,7 +16,8 @@ card.innerHTML = `
                 <img
                 src="${imgUrl}" 
                 alt="pictureText">
-                <caption><small> ${caption} </small></caption>
+                <br>
+                <cite><small> ${caption} </small></cite>
             </div>
             <details>
                 <summary>Description</summary>
@@ -27,8 +28,8 @@ card.innerHTML = `
                 ${languages}
             </details>
             <div class="btnContainer">
-                <a href='${DemoLink}'>Try Me</a>
-                <a href='${source}'>View Source Code</a>
+                <a href='${DemoLink}' target="_blank">Try Me</a>
+                <a href='${source}' target="_blank">View Source Code</a>
             </div>
         </div>
         <footer><small>Michael Walker</small></footer>
