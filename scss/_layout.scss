@@ -1,0 +1,157 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  overflow: hidden;
+  >header{
+    text-align: center;
+    display: flex;
+    position: absolute;
+    left: 1%;
+    top: 1%;
+    z-index: 7;
+    nav {
+      ul {
+        display: flex;
+        flex-direction: row;
+        width: 10vw;
+        align-content: center;
+        justify-content: space-between;
+        &:nth-child(1){
+          margin-left: 4%;
+        }
+        >li{
+          margin-right:5%;
+          margin-top:6%;
+        }
+      }
+    }
+  }
+  main{
+    overflow: scroll;
+    scroll-behavior: smooth;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    section {
+      scroll-snap-align: start;
+      &#section_one{
+        .container {
+          > h2 {
+            align-self: center;
+          }
+        }
+      }
+      &#section_two{
+        .container{
+          >ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 4%;
+            text-align: center;
+          }
+          >h2{
+            align-self: center;
+          }
+        }
+      }
+      &#section_three{
+
+        .container {
+          > h2 {
+            font-size: 6rem;
+            align-self: center;
+          }
+          address{
+            span{
+              margin-top: 2%;
+              padding:.75% 3%;
+            }
+          }
+        }
+      }
+      &#section_four{
+        .container{
+          details{
+            overflow-x: hidden;
+            &:focus{
+              -webkit-touch-callout: none;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              -webkit-tap-highlight-color: transparent !important;
+              outline: none !important
+            }
+            summary{
+              overflow-x: hidden;
+              -webkit-overflow-scrolling: touch;
+
+            }
+            .LRcontainer{
+              display: flex;
+              text-align: center;
+              overflow-y: hidden;
+              overflow-x: scroll;
+              flex-wrap: nowrap;
+              padding-top: 2vh;
+
+              &>:nth-child(1){
+                margin-left: 2%;
+              }
+              .card{
+                flex:0 0 auto;
+                padding-top: 1vh;
+                margin-right: 5vw;
+                margin-bottom: 2%;
+                overflow-y: hidden;
+                overflow-x: hidden;
+                header{
+                  text-align: center;
+                  justify-content: center;
+                  padding-bottom: 1.5%;
+                }
+                img{
+                  width:90%;
+                  height: 20vh;
+                }
+                .btnContainer{
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  margin-bottom: 2%;
+                  align-items: center;
+                  text-align: center;
+                  a{
+                    width: 70%;
+                    padding:1% 7% 1% 7%;
+                    border-radius: 25px;
+                    margin-top: 3%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width:100vw;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+  }
+}
+
+
+
+

@@ -1,0 +1,223 @@
+// Imports
+@use 'layout';
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
+// Animations
+@keyframes open {
+  0%{opacity: 0; height: 0;}
+  100%{opacity: 1; height:100%}
+}
+// Mixins
+@mixin for-phone-only{
+  @media (max-width:599px) {@content;}
+}
+@mixin for-tablet-portrait-up{
+  @media(min-width: 600px){
+    @media ( max-width:1199px) {
+      @content;
+    }
+  }
+}
+@mixin for-desktop-up{
+  @media(min-width: 1200px){
+    @media ( max-width:1799px) {
+      @content;
+    }
+  }
+}
+@mixin for-big-desktop-up{
+  @media(min-width: 1800px){@content;}
+}
+// Variables
+$primary-white:#FFFFFF;
+$primary-black:#000000;
+$primary-orange:tomato;
+$primary-teal:#1B998B;
+$primary-yellow: #eed420;
+$secondary-yellow:#6B9F9A;
+// Styles
+html{
+  @include for-phone-only{
+      font-size: 5pt;
+  }
+  @include for-tablet-portrait-up{
+    font-size: 10pt;
+  }
+
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  .selected{
+    font-size: 1.4rem;
+    text-decoration: underline;
+  }
+  header {
+    > h1 {
+      stroke: white;
+      stroke-width: 2px;
+    }
+    nav {
+      ul {
+        font-size: 1.3rem;
+        text-decoration: none;
+        list-style: none;
+        a{
+          color:inherit;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  main{
+    section {
+      &#section_one{
+        background-color: $primary-orange;
+        font-size: 5rem;
+        box-shadow: black 2px 2px;
+        .container {
+          > h2 {
+            font-family: 'Rock Salt', cursive;
+            color:$primary-white;
+            > span {
+              color: $primary-black;
+              text-shadow: none;
+            }
+          }
+        }
+      }
+      &#section_two{
+        background: $primary-black;
+        color:$primary-yellow;
+        .container{
+          >ul {
+            color: $primary-white;
+            font-size: 2rem;
+            list-style: none;
+          }
+          >h2{
+            font-family: 'Rock Salt', cursive;
+            color: $primary-yellow;
+          }
+          >h3>a{
+            font-size: 2rem;
+            color:$primary-white;
+          }
+          font-size: 3rem;
+        }
+      }
+      &#section_three{
+        background-color:$primary-teal ;
+        .container {
+          > h2 {
+            font-size: 6rem;
+            font-family: 'Rock Salt', cursive;
+            color:$primary-yellow;
+            > span {
+              color: $primary-black;
+              text-shadow: none;
+            }
+
+          }
+          address{
+            span{
+              font-size: 2rem;
+              font-style: italic;
+              color:$primary-black;
+              background-color: $primary-white;
+              border: $primary-black solid 2px;
+              border-radius:50px;
+              a{
+                font-size: 2rem;
+                color:$primary-black;
+                font-weight: bold;
+                font-style: normal;
+              }
+            }
+          }
+        }
+      }
+      &#section_four{
+        .container{
+          details{
+            summary{
+              font-size: 6rem;
+              font-family: "Rock Salt", cursive;
+              color:$primary-black;
+              background-color:$primary-white;
+              small{
+                font-size: 1rem;
+                font-family: "Times New Roman", serif;
+                color:lighten($primary-black,55);
+              }
+              &:hover{
+                color:$primary-orange;
+              }
+            }
+            .LRcontainer{
+              .card{
+                font-family: "Times New Roman", serif;
+                box-shadow: black 4px 3px;
+                border:solid black 2px;
+                border-radius: 5px;
+                width:25%;
+                height:30%;
+                @include for-phone-only{
+                  width:50%;
+                  height:35%;
+                }
+                @include for-tablet-portrait-up{
+                  width:40%;
+                  height:35%;
+                }
+                &:hover{
+                  box-shadow: $primary-yellow 4px 3px;
+                  transform: scale(1.05);
+                  header{
+                    color: $primary-yellow;
+                  }
+                }
+                header{
+                  font-family: 'EB Garamond', serif;
+                  text-transform: capitalize;
+                  position: unset;
+                }
+                img{
+                  border-radius:5px;
+                  box-shadow: black 2px 3px;
+
+                }
+                >caption{
+                  font-style: italic;
+                }
+                details summary {
+                  font-size: 1.2rem;
+                  font-family: 'EB Garamond', serif;
+
+                }
+                details[open] summary{
+                  color:$primary-orange;
+                }
+                .btnContainer{
+                  a{
+                    background-color: $primary-black;
+                    color: $primary-white;
+                    font-size: 1.5rem;
+                    font-weight: bolder;
+                    text-decoration: none;
+                    box-shadow: dimgray 2px 3px;
+                  }
+                }
+              }
+            }
+            &[open] summary ~ *{
+              animation: open 1s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+

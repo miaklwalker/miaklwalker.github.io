@@ -1,15 +1,45 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
 
-# TEAM
+/* TEAM */
 
-    Michael Walker -- Designer / Coder / Web Dev -- <twitter>
 
-# THANKS
+ Desginer / Developer : Michael Walker.
 
-   <name>
 
-# TECHNOLOGY COLOPHON
+Site: This one!.
 
-    CSS3, HTML5,JAVASCRIPT
+Location: Evansville, The United States Of America.
 
+
+
+                        [...]
+
+
+
+/* THANKS */
+
+Robert Staser ,
+Lauren Staser ,
+Stephanie Jenkins ,
+Rick Walker,
+Lori Walker,
+
+
+
+
+                        [...]
+
+
+
+/* SITE */
+
+
+Last update: 2020/02/08
+
+
+Standards: HTML5, SASS , TypeScript
+
+
+Components: None
+
+
+Software: Webstorm IDE and Visual Studio Code
