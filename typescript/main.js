@@ -1,34 +1,83 @@
 import makeCard from "./makeCard.js";
 import projects from "./projects.js";
-import iconLibrary from "./icons.js";
+import makeIcons from "./makeIcons.js";
 const cardContainer = document.querySelector('.LRcontainer');
 const header = document.querySelector('.header');
 const mainContainer = document.querySelector('#main-container');
-const navLinks = document.querySelectorAll('.nav-link');
 const techListSmall = document.querySelector('.tech');
-const techListChildren = techListSmall.children;
 const techFilterList = document.querySelector('#tech-filter');
+const navLinks = document.querySelectorAll('.nav-link');
+const techListChildren = techListSmall.children;
 const techFilterChildren = techFilterList.children;
 let unit = document.body.clientHeight;
-for (let child of techFilterChildren) {
-    const span = document.createElement('span');
-    const icon = iconLibrary[child.className];
-    span.innerHTML = icon.code;
-    span.className = child.className;
-    const SVG = span.children[0];
-    SVG.style.fill = `#${icon.color}`;
-    SVG.style.width = `2vw`;
-    SVG.style.height = `4vh`;
-    child.addEventListener('click', (e) => console.log(e.target.parentNode.parentNode.className));
-    child.append(span);
+makeIcons(techListChildren);
+makeIcons(techFilterChildren);
+class State {
+    constructor(state = {}) {
+        this.state = state;
+        this.history = [];
+    }
+    set currentState(state) {
+        this.history.push(this.state);
+        this.state = Object.assign(Object.assign({}, this.state), state);
+    }
+    get currentState() {
+        return this.state;
+    }
+    addProperty(property, value) {
+        this.state.event = `Property : ${property} , was added`;
+        this.state[property] = value;
+        Object.defineProperty(this.state, property, { writable: true });
+        this.currentState = this.currentState;
+    }
 }
-for (let child of techListChildren) {
-    const span = document.createElement('span');
-    const icon = iconLibrary[child.id];
-    span.innerHTML = icon.code;
-    const SVG = span.children[0];
-    SVG.style.fill = `#${icon.color}`;
-    child.append(span);
+;
+class VisibilityFilters {
+    constructor() {
+        this.filters = document.createElement('span');
+    }
+    getFilters() {
+        if (this.filters.classList.length === 0) {
+            return ('AllVisible');
+        }
+        return [...this.filters.classList];
+    }
+    toggleFilter(name) {
+        this.filters.classList.toggle(name);
+    }
+}
+let techFilter = new VisibilityFilters();
+[...techFilterChildren].forEach(child => {
+    child.addEventListener('click', () => {
+        if (child.classList.contains('filter')) {
+            child.classList.remove('filter');
+        }
+        console.log(child);
+        techFilter.toggleFilter(child.className);
+        makeCards(techFilter.getFilters());
+        child.classList.toggle('filter');
+    });
+});
+function makeCards(filter) {
+    cardContainer.innerHTML = '';
+    if (filter === 'AllVisible') {
+        projects.forEach((project) => cardContainer.append(makeCard(project)));
+    }
+    else {
+        let uniqueProjects = new Set();
+        if (filter instanceof Array) {
+            filter.forEach(projectFilter => {
+                projects.forEach(project => {
+                    if (project.languages.includes(projectFilter)) {
+                        uniqueProjects.add(project);
+                    }
+                });
+            });
+        }
+        console.log(uniqueProjects);
+        console.log(filter);
+        uniqueProjects.forEach((project) => cardContainer.append(makeCard(project)));
+    }
 }
 function chooseColor(scrollPosition) {
     let max = unit * 3;
@@ -57,7 +106,7 @@ function preload() {
     return () => {
         if (!loaded) {
             console.log('Images Loaded');
-            projects.forEach((project) => cardContainer.append(makeCard(project)));
+            makeCards('AllVisible');
             loaded = true;
         }
     };

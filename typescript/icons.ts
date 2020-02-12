@@ -1,4 +1,4 @@
-interface icon {
+export interface icon {
     code:string,
     color:string,
     backgroundColor:string,

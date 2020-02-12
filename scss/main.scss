@@ -45,7 +45,6 @@ html{
   @include for-tablet-portrait-up{
     font-size: 10pt;
   }
-
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
   .selected{
@@ -66,7 +65,7 @@ html{
           color:inherit;
           text-decoration: none;
           &:hover{
-            color:$primary-orange;
+            color:$primary-yellow;
           }
         }
       }
@@ -173,6 +172,16 @@ html{
                 list-style: none;
                 margin: 5px 0 2px 0;
                 li{
+                  &.filter{
+                  transform:scale(1.6);
+                  }
+                  span{
+
+                    svg{
+                      width:2vw;
+                      height:4vh;
+                    }
+                  }
                   &:hover>span>svg{
                     transform: scale(1.3);
                   }

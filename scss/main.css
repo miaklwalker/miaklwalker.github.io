@@ -174,7 +174,7 @@ html header nav ul a {
   text-decoration: none;
 }
 html header nav ul a:hover {
-  color: tomato;
+  color: #eed420;
 }
 html main section#section_one {
   background-color: tomato;
@@ -262,6 +262,13 @@ html main section#section_four .container details .filters ul {
   justify-content: space-around;
   list-style: none;
   margin: 5px 0 2px 0;
+}
+html main section#section_four .container details .filters ul li.filter {
+  transform: scale(1.6);
+}
+html main section#section_four .container details .filters ul li span svg {
+  width: 2vw;
+  height: 4vh;
 }
 html main section#section_four .container details .filters ul li:hover > span > svg {
   transform: scale(1.3);
