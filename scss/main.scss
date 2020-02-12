@@ -7,8 +7,36 @@
   0%{opacity: 0; height: 0;}
   100%{opacity: 1; height:100%}
 }
-// Mixins
+@keyframes fade-in{
+  from{
+    opacity: 0;
+    filter: brightness(0);
+  }
+  to{
+    opacity: 100;
+    filter:brightness(100%);
+  }
+}
 
+
+@keyframes pop{
+  from{
+    filter: drop-shadow(0px 0px ) ;
+  }
+  to{
+    filter: drop-shadow(3px -3px 2px) ;
+  }
+}
+// Mixins
+@mixin iconPop {
+  animation: fade-in .5s ease-in-out forwards;
+}
+@mixin text-pop{
+  text-shadow:  $primary-white -1px -1px;
+}
+@mixin text-drop{
+  text-shadow:  $primary-yellow -1px -1px;
+}
 @mixin for-phone-only{
   @media (max-width:599px) {@content;}
 }
@@ -78,12 +106,12 @@ html{
         font-size: 5rem;
         box-shadow: black 2px 2px;
         .container {
+          @include text-pop;
           > h2 {
             font-family: 'Rock Salt', cursive;
-            color:$primary-white;
+            color:$primary-black;
             > span {
               color: $primary-black;
-              text-shadow: none;
             }
           }
         }
@@ -92,6 +120,7 @@ html{
         background: $primary-black;
         color:$primary-yellow;
         .container{
+
           >ul {
             color: $primary-white;
             font-size: 2rem;
@@ -99,15 +128,18 @@ html{
             svg{
               height:10vh;
               visibility: hidden;
+              margin-left: 5vw;
             }
             li:hover>span>svg{
               visibility: visible;
+              @include iconPop;
             }
 
           }
           >h2{
             font-family: 'Rock Salt', cursive;
             color: $primary-yellow;
+            @include text-pop;
           }
           >h3>a{
             font-size: 2rem;
@@ -123,6 +155,7 @@ html{
             font-size: 6rem;
             font-family: 'Rock Salt', cursive;
             color:$primary-yellow;
+            @include text-pop;
             > span {
               color: $primary-black;
               text-shadow: none;
@@ -155,11 +188,15 @@ html{
               font-family: "Rock Salt", cursive;
               color:$primary-black;
               background-color:$primary-white;
+             &:not(small){
+               @include text-drop;
+             }
               small{
                 font-size: 1rem;
                 font-family: "Times New Roman", serif;
                 font-style: italic;
-                color:lighten($primary-black,55);
+                color:$primary-black;
+                text-shadow: none;
               }
               &:hover{
                 color:$primary-orange;
@@ -173,17 +210,17 @@ html{
                 margin: 5px 0 2px 0;
                 li{
                   &.filter{
-                  transform:scale(1.6);
+                    transform:scale(1.2);
+                    animation: pop .2s  forwards;
                   }
                   span{
-
                     svg{
-                      width:2vw;
-                      height:4vh;
+                      width:3vw;
+                      height:6vh;
                     }
                   }
-                  &:hover>span>svg{
-                    transform: scale(1.3);
+                  &:not(.filter):hover{
+                    filter: drop-shadow(0 0 3px)
                   }
                 }
               }

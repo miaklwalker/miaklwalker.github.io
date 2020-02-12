@@ -1,6 +1,6 @@
-import makeCard from "./makeCard.js";
-import projects from "./projects.js";
 import makeIcons from "./makeIcons.js";
+import VisibilityFilters from "./visibilityFilter.js";
+import { makeCards, preload } from "./functions.js";
 const cardContainer = document.querySelector('.LRcontainer');
 const header = document.querySelector('.header');
 const mainContainer = document.querySelector('#main-container');
@@ -12,73 +12,19 @@ const techFilterChildren = techFilterList.children;
 let unit = document.body.clientHeight;
 makeIcons(techListChildren);
 makeIcons(techFilterChildren);
-class State {
-    constructor(state = {}) {
-        this.state = state;
-        this.history = [];
-    }
-    set currentState(state) {
-        this.history.push(this.state);
-        this.state = Object.assign(Object.assign({}, this.state), state);
-    }
-    get currentState() {
-        return this.state;
-    }
-    addProperty(property, value) {
-        this.state.event = `Property : ${property} , was added`;
-        this.state[property] = value;
-        Object.defineProperty(this.state, property, { writable: true });
-        this.currentState = this.currentState;
-    }
-}
-;
-class VisibilityFilters {
-    constructor() {
-        this.filters = document.createElement('span');
-    }
-    getFilters() {
-        if (this.filters.classList.length === 0) {
-            return ('AllVisible');
-        }
-        return [...this.filters.classList];
-    }
-    toggleFilter(name) {
-        this.filters.classList.toggle(name);
-    }
-}
 let techFilter = new VisibilityFilters();
 [...techFilterChildren].forEach(child => {
     child.addEventListener('click', () => {
+        let state = true;
         if (child.classList.contains('filter')) {
             child.classList.remove('filter');
+            state = false;
         }
-        console.log(child);
         techFilter.toggleFilter(child.className);
-        makeCards(techFilter.getFilters());
-        child.classList.toggle('filter');
+        makeCards(techFilter.getFilters(), cardContainer);
+        child.classList.toggle('filter', state);
     });
 });
-function makeCards(filter) {
-    cardContainer.innerHTML = '';
-    if (filter === 'AllVisible') {
-        projects.forEach((project) => cardContainer.append(makeCard(project)));
-    }
-    else {
-        let uniqueProjects = new Set();
-        if (filter instanceof Array) {
-            filter.forEach(projectFilter => {
-                projects.forEach(project => {
-                    if (project.languages.includes(projectFilter)) {
-                        uniqueProjects.add(project);
-                    }
-                });
-            });
-        }
-        console.log(uniqueProjects);
-        console.log(filter);
-        uniqueProjects.forEach((project) => cardContainer.append(makeCard(project)));
-    }
-}
 function chooseColor(scrollPosition) {
     let max = unit * 3;
     if (scrollPosition < unit * 1.01) {
@@ -101,17 +47,7 @@ function pickCurrentLink(scrollTop) {
         }
     };
 }
-function preload() {
-    let loaded = false;
-    return () => {
-        if (!loaded) {
-            console.log('Images Loaded');
-            makeCards('AllVisible');
-            loaded = true;
-        }
-    };
-}
-let preloader = preload();
+let preloader = preload(cardContainer);
 // This function sets the underline on the navLinks for the currently selected page!
 // @ts-ignore
 mainContainer.addEventListener('scroll', ({ target: { scrollTop } }) => {
@@ -121,5 +57,11 @@ mainContainer.addEventListener('scroll', ({ target: { scrollTop } }) => {
         preloader();
     }
     header.style.color = `rgb(${color},${color},${color})`;
+});
+let tip = document.getElementById('hint');
+let details = document.getElementById('projects');
+details.addEventListener('toggle', () => {
+    const { open } = details;
+    tip.innerText = open ? 'Click A Icon To Filter Projects' : 'pst... click me';
 });
 //# sourceMappingURL=main.js.map

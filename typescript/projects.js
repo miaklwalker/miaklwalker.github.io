@@ -48,7 +48,7 @@ const projects = [
         "name": "Redux Todo List",
         "caption": 'From The Redux Tutorial Site',
         "imgUrl": '../../images/reactTodo.webp',
-        "languages": ["React", "Sass", "JavaScript", "Redux"],
+        "languages": ["React", "Sass", "JavaScript", "Redux", "Jest"],
         "SourceCode": "https://github.com/miaklwalker/Redux-Todo-List",
         "DemoLink": "https://suspicious-wozniak-174f33.netlify.com/",
         "description": "The React-Redux tutorial project with a bit of extra flair and testing."
@@ -84,7 +84,7 @@ const projects = [
         "name": "BKeeper",
         "caption": 'My First Full Stack App',
         "imgUrl": '../../images/bkeeper.webp',
-        "languages": ["JavaScript", "BootStrap", "TypeScript", "React", "Cypress"],
+        "languages": ["JavaScript", "Bootstrap", "TypeScript", "React", "Cypress"],
         "SourceCode": "https://github.com/miaklwalker/b-keeper",
         "DemoLink": "http://www.band-keeper.com/",
         "description": "My first Full-Stack Application.<br> It uses Mongoose, Express, React, Node.<br> It's a full-featured CRM.<br> It was designed to help music studios manage artist's while letting the focus on what matters.<br> Making good music."
@@ -93,7 +93,7 @@ const projects = [
         "name": "Backend",
         "caption": 'My First Rest Api Backend',
         "imgUrl": '../../images/bkeeper.webp',
-        "languages": ["Node", "Postman", "Mongoose", "MongoDB"],
+        "languages": ["Node", "Postman", "Mongoose", "MongoDB", "Jest"],
         "SourceCode": "https://github.com/miaklwalker/backend",
         "DemoLink": "http://www.band-keeper.com/",
         "description": "My first Full-Stack Application.<br> It uses Mongoose, Express, React, Node.<br> It's a full-featured CRM.<br> It was designed to help music studios manage artist's while letting the focus on what matters.<br> Making good music."
