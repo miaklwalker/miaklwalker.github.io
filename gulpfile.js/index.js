@@ -12,7 +12,7 @@ const concat = require('gulp-concat')
 const uglify = require('gulp-uglify');
 
 const tsconfig = {
-    "target": "es2016",
+    "target": "es2015",
     "module": "es2015", 
     "sourceMap": true,  
     "strict": true,
@@ -46,9 +46,6 @@ function scripts(){
     .src(src)
     .pipe(ts(tsconfig))
     .pipe(sourceMap.init({loadMaps:true}))
-    .pipe(babel())
-    .pipe(concat('main.js'))
-    .pipe(uglify())
     .pipe(sourceMap.write('.'))
     .pipe(gulp.dest(dest))
 }
