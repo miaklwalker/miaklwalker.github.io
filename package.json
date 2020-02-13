@@ -16,14 +16,21 @@
   "author": "Michael Walker",
   "license": "MIT",
   "dependencies": {
+    "dart-sass": "^1.25.0",
+    "gulp-uglify": "^3.0.2",
     "sass": "^1.25.0",
     "typescript": "^3.7.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0-beta.2",
     "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
     "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-typescript": "^6.0.0-alpha.1"
   }
 }

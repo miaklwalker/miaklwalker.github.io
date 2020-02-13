@@ -1,10 +1,15 @@
 const gulp = require('gulp');
 // For StyleSheets
 const sass = require('gulp-sass');
+sass.compiler = require('dart-sass');
 const minifycss = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
 //For Scripts
 const ts = require('gulp-typescript');
+const babel = require('gulp-babel');
+const sourceMap = require('gulp-sourcemaps');
+const concat = require('gulp-concat')
+const uglify = require('gulp-uglify');
 
 const tsconfig = {
     "target": "es2016",
@@ -40,10 +45,16 @@ function scripts(){
     return gulp
     .src(src)
     .pipe(ts(tsconfig))
+    .pipe(sourceMap.init({loadMaps:true}))
+    .pipe(babel())
+    .pipe(concat('main.js'))
+    .pipe(uglify())
+    .pipe(sourceMap.write('.'))
     .pipe(gulp.dest(dest))
 }
 
-
+const build = gulp.parallel(style,scripts)
 
 exports.sass = style
 exports.scripts = scripts
+exports.default = build
