@@ -13,9 +13,14 @@ card.innerHTML = `
         <header><h1>${name}</h1></header>
         <div class="cardBody">
             <div class="imageContainer">
+            <picture>
+                <source 
+                srcset="${imgUrl}.webp" 
+                type="image/webp">
                 <img
-                src="${imgUrl}" 
+                src="${imgUrl}.jpg" 
                 alt="pictureText">
+                </picture>
                 <br>
                 <cite><small> ${caption} </small></cite>
             </div>

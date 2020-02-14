@@ -56,7 +56,6 @@ function pickCurrentLink(scrollTop:number) {
 }
 
 let preloader = preload(cardContainer);
-// This function sets the underline on the navLinks for the currently selected page!
 // @ts-ignore
 mainContainer.addEventListener('scroll',({target:{scrollTop}})=>{
     navLinks.forEach(pickCurrentLink(scrollTop));

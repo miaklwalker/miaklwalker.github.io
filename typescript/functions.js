@@ -10,7 +10,7 @@ export function makeCards(filter, container) {
         if (filter instanceof Array) {
             filter.forEach(projectFilter => {
                 projects.forEach(project => {
-                    if (project.languages.includes(projectFilter)) {
+                    if (project.languages.indexOf(projectFilter, 0) !== -1) {
                         uniqueProjects.add(project);
                     }
                 });

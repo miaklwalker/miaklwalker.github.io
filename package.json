@@ -15,8 +15,14 @@
   ],
   "author": "Michael Walker",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
+    "dart-sass": "^1.25.0",
+    "gulp-uglify": "^3.0.2",
     "sass": "^1.25.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-sass": "^4.0.2"
   }
 }
