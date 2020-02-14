@@ -11,7 +11,7 @@ const projects:project[] =[
         {
             "name":"The Legend Of Zelda",
             "caption":'Recreated from scratch!',
-            "imgUrl":'../../images/LOZ.webp',
+            "imgUrl":'../../images/LOZ',
             "languages":["TypeScript","JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/thelegendofzelda",
             "DemoLink":"https://codesandbox.io/s/the-legend-of-zelda-web-version-3x8s2",
@@ -20,7 +20,7 @@ const projects:project[] =[
         {
             "name":"Tile Mapper",
             "caption":'For Mapping 2D Tile-based games',
-            "imgUrl":'../../images/tilemapper.webp',
+            "imgUrl":'../../images/tilemapper',
             "languages":["JavaScript"],
             "SourceCode":"https://github.com/miaklwalker/TileMapper",
             "DemoLink":"https://codesandbox.io/s/tilemapperjs-gimgd",
@@ -29,7 +29,7 @@ const projects:project[] =[
         {
             "name":"Brick Breaker",
             "caption":'My first Game!',
-            "imgUrl":'../../images/brickbreaker.webp',
+            "imgUrl":'../../images/brickbreaker',
             "languages":["JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/BrickBreaker",
             "DemoLink":"https://reverent-poitras-b46a77.netlify.com/",
@@ -38,7 +38,7 @@ const projects:project[] =[
         {
             "name":"Magic 8 Ball",
             "caption":'Immutable State and Honest Answers',
-            "imgUrl":'../../images/magic8.webp',
+            "imgUrl":'../../images/magic8',
             "languages":["JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/Magic8Ball",
             "DemoLink":"https://codesandbox.io/s/magic-8-ball-dgocu",
@@ -47,7 +47,7 @@ const projects:project[] =[
         {
             "name":"Snake",
             "caption":'2 hour Coding Challenge',
-            "imgUrl":'../../images/snake.webp',
+            "imgUrl":'../../images/snake',
             "languages":["JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/Snake",
             "DemoLink":"https://www.imawalkersoyoudonthavetobe.com/Snake/",
@@ -56,7 +56,7 @@ const projects:project[] =[
         {
             "name":"Redux Todo List",
             "caption":'From The Redux Tutorial Site',
-            "imgUrl":'../../images/reactTodo.webp',
+            "imgUrl":'../../images/reactTodo',
             "languages":["React","Sass","JavaScript","Redux","Jest"],
             "SourceCode":"https://github.com/miaklwalker/Redux-Todo-List",
             "DemoLink":"https://suspicious-wozniak-174f33.netlify.com/",
@@ -65,7 +65,7 @@ const projects:project[] =[
         {
             "name":"Dice Roller",
             "caption":'My First App Ever',
-            "imgUrl":'../../images/diceRoller.webp',
+            "imgUrl":'../../images/diceRoller',
             "languages":["JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/DiceRollerMyFirstApp",
             "DemoLink":"https://www.imawalkersoyoudonthavetobe.com/DiceRollerMyFirstApp/",
@@ -74,7 +74,7 @@ const projects:project[] =[
         {
             "name":"War",
             "caption":'My first Game , with a light refactor',
-            "imgUrl":'../../images/war.webp',
+            "imgUrl":'../../images/war',
             "languages":["JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/WarTypeScript",
             "DemoLink":"https://www.imawalkersoyoudonthavetobe.com/War-JavaScript-Card-Game/",
@@ -83,7 +83,7 @@ const projects:project[] =[
         {
             "name":"BabaIsYou JS",
             "caption":'remade from scratch in JavaScript',
-            "imgUrl":'../../images/babaisyou.webp',
+            "imgUrl":'../../images/babaisyou',
             "languages":["JavaScript","HTML","CSS"],
             "SourceCode":"https://github.com/miaklwalker/JavaScriptIsYou",
             "DemoLink":"https://codesandbox.io/s/browserisyou-rzuxw",
@@ -92,7 +92,7 @@ const projects:project[] =[
         {
             "name":"BKeeper",
             "caption":'My First Full Stack App',
-            "imgUrl":'../../images/bkeeper.webp',
+            "imgUrl":'../../images/bkeeper',
             "languages":["JavaScript","Bootstrap","TypeScript","React","Cypress"],
             "SourceCode":"https://github.com/miaklwalker/b-keeper",
             "DemoLink":"http://www.band-keeper.com/",
@@ -101,7 +101,7 @@ const projects:project[] =[
         {
             "name":"Backend",
             "caption":'My First Rest Api Backend',
-            "imgUrl":'../../images/bkeeper.webp',
+            "imgUrl":'../../images/bkeeper',
             "languages":["Node","Postman","Mongoose","MongoDB","Jest"],
             "SourceCode":"https://github.com/miaklwalker/backend",
             "DemoLink":"http://www.band-keeper.com/",

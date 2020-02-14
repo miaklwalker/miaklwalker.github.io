@@ -28,5 +28,4 @@ export function preload(container) {
         }
     };
 }
-
 //# sourceMappingURL=functions.js.map

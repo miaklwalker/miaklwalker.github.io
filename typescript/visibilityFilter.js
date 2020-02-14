@@ -12,5 +12,4 @@ export default class VisibilityFilters {
         this.filters.classList.toggle(name);
     }
 }
-
 //# sourceMappingURL=visibilityFilter.js.map

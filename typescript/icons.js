@@ -73,5 +73,4 @@ const iconLibrary = {
     },
 };
 export default iconLibrary;
-
 //# sourceMappingURL=icons.js.map

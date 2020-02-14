@@ -17,5 +17,4 @@ export default function makeIcons(elementList) {
     }
     return icons;
 }
-
 //# sourceMappingURL=makeIcons.js.map
