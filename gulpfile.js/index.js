@@ -5,7 +5,9 @@ sass.compiler = require('dart-sass');
 const minifycss = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
 //For Scripts
-// const babel = require('gulp-babel');
+ const babel = require('gulp-babel');
+ const concat = require('gulp-concat');
+ const del = require('del');
 // const sourceMap = require('gulp-sourcemaps');
 // const source = require('vinyl-source-stream');
 // const buffer = require('vinyl-buffer');
@@ -35,15 +37,24 @@ function style(){
     .pipe(gulp.dest(dest));
 }
 
-// function scripts(){
-//     const {script:{src,dest}}=paths;
-//     return gulp.src(src)
-//     .pipe(babel())
-//     .pipe(gulp.dest(dest));
-// }
+function scripts(){
+    const {script:{src,dest}}=paths;
+    return gulp.src(src)
+    .pipe(babel())
+    //.pipe(concat('main.js'))
+    .pipe(gulp.dest(dest));
+}
 
-// const build = gulp.parallel(style,scripts);
-const build = gulp.parallel(style);
+function cleanOldBuild(){
+    return del(['./dist'])
+}
+
+function watch () {
+    gulp.watch('./typescript/*.ts',scripts);
+    gulp.watch('./scss/*.scss',style);
+}
+ const build = gulp.series(cleanOldBuild,gulp.parallel(style,scripts));
 exports.sass = style;
-// exports.scripts = scripts;
+exports.scripts = scripts;
+exports.watch = gulp.series(watch)
 exports.default = build;

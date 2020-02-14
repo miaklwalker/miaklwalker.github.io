@@ -1,0 +1,1 @@
+import iconLibrary from"./icons.js";function createIcon(a){var b=document.createElement("span");b.innerHTML=a.code;var c=b.children[0];return c.style.fill="#".concat(a.color),b}export default function makeIcons(a){var b=[];for(var f of a){var c,d=null!==(c=iconLibrary[f.id])&&void 0!==c?c:iconLibrary[f.className],e=createIcon(d);b.push(e),f.append(e)}return b}

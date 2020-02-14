@@ -1,0 +1,1 @@
+export default class VisibilityFilters{constructor(){this.filters=document.createElement("span")}getFilters(){return 0===this.filters.classList.length?"AllVisible":[...this.filters.classList]}toggleFilter(a){this.filters.classList.toggle(a)}}
