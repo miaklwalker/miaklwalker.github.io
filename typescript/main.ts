@@ -9,12 +9,9 @@ const mainContainer         = document.querySelector('#main-container') as HTMLE
 const techListSmall         = document.querySelector('.tech')           as HTMLUListElement;
 const techFilterList        = document.querySelector('#tech-filter')    as HTMLUListElement;
 const navLinks              = document.querySelectorAll('.nav-link')    as NodeListOf <HTMLLIElement>;
-const techListChildren      = techListSmall.children  as HTMLCollectionOf<HTMLLIElement>;
 const techFilterChildren    = techFilterList.children as HTMLCollectionOf<HTMLLIElement>;
 
 let unit = document.body.clientHeight;
-
-makeIcons(techListChildren);
 makeIcons(techFilterChildren);
 
 
